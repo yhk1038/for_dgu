@@ -1,0 +1,367 @@
+<div style="margin-top: -20px;">
+    <div class="col-md-12" style="background-color:#fff; padding:15px 0px 15px 15px;position: fixed;z-index: 100; border-bottom: 1px solid #eeeeee;">
+        <div id="logo" class="col-md-2">
+            <a href="/" class="standard-logo" data-dark-logo="images/logo1.png">
+                <img style="width:84%;" src="https://scontent-icn1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/12313669_858709030912827_2771614648691609873_n.jpg?oh=79e255f22524ec80356c35db1339e37f&oe=56E646BE" alt="for DGU">
+            </a>
+        </div>
+        <div class="col-md-10">
+            <nav id="primary-menu" class="">
+				<ul class="nav one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="65" style="float:right; font-weight: bolder;width: 44.5%; font-size: 12px; text-align: center;">
+					<li style="position:relative; float: left;width: 13.5%;"><a href="/" data-href="#wrapper" style="color:#000;"><div>HOME</div></a></li>
+					<li style="position:relative; float: left;width: 13.5%;"><a href="/" data-href="#section-about" style="color:#000;"><div>ABOUT</div></a></li>
+					<li style="position:relative; float: left;width: 13.5%;"><a href="/news/info" data-href="#section-univ" style="color:#000;"><div>NEWS</div></a></li>
+					<li style="position:relative; float: left;width: 13.5%;"><a href="#" data-href="#section-works" style="color:#1ABC9C;"><div>일정알림</div></a></li>
+					<li style="position:relative; float: left;width: 13.5%;"><a href="#" data-href="#section-review" style="color:#000;"><div>IDEAS</div></a></li>
+					<li style="position:relative; float: left;width: 13.5%;"><a href="#" data-href="#section-services" style="color:#000;"><div>자유게시판</div></a></li>
+					<li style="position:relative; float: left;width: 13.5%;"><a href="#" data-href="#section-operator" style="color:#000;"><div>응원메세지</div></a></li>
+				</ul>
+			</nav>
+        </div>
+    </div>
+    <div class="col-md-12" style="margin-top: 70px; background-color:#e6e6e6;">
+        <div class="col-md-2" style="background-color:;"></div>
+        <div class="col-md-8" style="background-color:#d9d9d9;padding-bottom: 15px;">
+            <% if params[:member] == "master" %>
+            <div class="col-md-12" style="background-color:#e6e6e6; margin-top:15px; border-radius:4px;border: 3px solid #c6c6c6;padding: 0%;">
+                <div class="col-md-8" style="height:450px;padding: 0%;background-color: #000;text-align: center;border-top-left-radius: 4px;border-bottom-left-radius: 4px;">
+                    <button type="button" class="btn btn-primary btn-sm" style="position: absolute; right: 0%; top: 0%;">
+                      등록ing..
+                    </button>
+                    <form action="/scdl/scdl_save" enctype="multipart/form-data" method="POST" name="scdl_form" id="scdl_form">
+                        <style>
+                            .register_input{
+                                width: 75%;
+                                height: 40px;
+                                border-radius: 5px;
+                                font-size: 20px;
+                                padding-left: 1%;
+                                margin-bottom: 12px;
+                            }
+                            .register_text{
+                                text-align:center;
+                                color:#fff;
+                                font-size:20px;
+                                font-weight:bolder;
+                            }
+                            .rinput_time{
+                                width:17%;
+                                font-size: 20px;
+                            }
+                        </style>
+                        <input type="hidden" name="scdl_password" value="120350" placeholder="" style="">
+                        <input type="text" name="scdl_img1" value="" placeholder="이미지 주소(url)를 붙여넣으세요" style="width: 91%;height: 7%;float: left;"><br><br>
+                        <span class="register_text">날짜</span><br>
+                        <input class="register_input" type="date" name="date_day" value="" placeholder="" style="width: 37%;"><br>
+                        <span class="register_text">일정 시작 시간 ~ 예상 종료 시간</span><br>
+                        <input class="register_input rinput_time" type="text" name="date_time_start" value="" placeholder="ex) 13:00 " style=""><span class="register_text"> ~ </span>
+                        <input class="register_input rinput_time" type="text" name="date_time_end" value="" placeholder="ex) 21:00 " style=""><br>
+                        <input class="register_input" type="text" name="scdl_title" value="" placeholder="이름 ex)관리자 7호" style=""><br>
+                        <input class="register_input" type="text" name="scdl_content_detail" value="" placeholder="작성자의 설명 한 마디" style=""><br>
+                        <input class="register_input" type="text" name="scdl_type" value="" placeholder="ex)공동행동 or 문화제 or 기자회견 ..." style=""><br>
+                        <input class="register_input" type="text" name="scdl_img2" value="" placeholder="3~4개 키워드를 입력하세요 ex) 입력> '미동추 학생들 멋져요' // 출력> '#미동추 #학생들 #멋져요'" style="font-size: 14px;"><br>
+                        <input class="register_input" type="submit" name="" value="작성이 완료되면 눌러주세요" placeholder="" style="background-color: #429AEC;
+                                                                                                                    border: inherit;
+                                                                                                                    width: 100%;
+                                                                                                                    margin: 0px;
+                                                                                                                    border-radius: 0px;
+                                                                                                                    float: left;
+                                                                                                                    position: absolute;
+                                                                                                                    left: 0px;
+                                                                                                                    bottom: 0px;
+                                                                                                                    color: #fff;
+                                                                                                                    font-size: 25px;
+                                                                                                                    font-weight: bolder;">
+                    </form>
+                </div>
+                <div class="col-md-4" style="height:450px; background-color:#fff;padding: 0%;border-left: 1px solid #c6c6c6;border-radius: 4px;">
+                    <div class="col-md-12" style="padding:0%;height:26%;border: 1px solid #c6c6c6;border-top-right-radius: 4px;line-height: 1.2;">
+                        <div class="col-md-2" style="padding: 2%;height: 100%;">
+                            <img src="https://scontent-icn1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/12316202_858771864239877_3834390672364174481_n.jpg?oh=6ace156a3f8b2877207940d75dda81b6&oe=56EB5A6C" style="width:50px;">
+                        </div>
+                        <div calss="col-md-10" style="padding: 2%;">
+                            <p style="font-size: 18px;font-weight: bolder;">작성자 이름</p>
+                            <p style="font-size: 16px;margin-top: -7px;">작성자의 설명 한 마디</p>
+                            <p style="margin-top: -3px;color:#CF01FF;font-weight: bolder;font-size: 16px;">4~5개의 키워드</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12" style="padding:0.9% 0% 0% 2%;height:8%;border: 1px solid #c6c6c6;">
+                        <img src="http://new1.nurinori.com/nurinoriData/data/board/1340328328832/e18ed6faae0e85f22ae611c8673a5146.jpg" height="100%"> 
+                        <span style="font-weight: bolder;color: #a9a9a9;">X <span style="font-size: 16px;font-weight: bolder;color: red;">0</span> others like this.</span>
+                        <img src="https://s.ytimg.com/yts/img/avatar_720-vflYJnzBZ.png" style="height: 85%; margin-top: -4px;">
+                        <span style="font-weight: bolder;color: #a9a9a9;">X <span style="font-size: 16px;font-weight: bolder;color:#c6d222;">0</span>명이 참여합니다.</span>
+                    </div>
+                    <div class="col-md-12" style="padding:0%;height:50%;border: 1px solid #c6c6c6;background-color: #e6e6e6;">
+                    </div>
+                    
+                    <div class="col-md-12" style="padding: 1px 0% 1px 1%;height: 6%;border: 1px solid #c6c6c6;border-bottom-right-radius: 4px;border-bottom: 0px;">
+                        <input disabled type="text" style="height: 100%;border-radius: 5px;border: 1px solid #c2c2c2;width: 49%;line-height: 1;" placeholder=" UrName">
+                        <input disabled type="password" style="height: 100%;border-radius: 5px;border: 1px solid #c2c2c2;width: 49%;line-height: 1;" placeholder=" UrPassWord">
+                    </div>
+                    <div class="col-md-12" style="padding:1%;height:10%;border: 1px solid #c6c6c6;border-bottom-right-radius: 4px;border-top: 0px;">
+                        <button type="button" class="btn btn-sm" style="height: 100%;padding: 0%;border: none;width: 10%;border-radius: 5px;background-color: #429AEC;">
+                            <img src="https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/12341556_858791930904537_2166027737553217698_n.jpg?oh=16a69a396f7d18135ce292ce4b55736d&oe=571E6731&__gda__=1458045447_51b7b1da119830add8b049fc6722e54a" style="height: 70%;width: 70%;border-radius: 5px;">
+                        </button>
+                        <input disabled style="height: 100%;border-radius: 5px;border: 2px solid #c2c2c2;width: 75%;" placeholder="참여의 메세지 작성 후 오른쪽 버튼을 클릭!">
+                        <input disabled type="submit" style="width: 12%;height: 100%;border-radius: 5px;border: inherit;" value="^ㅅ^">
+                    </div>
+                </div>
+            </div>
+            <!--img Modal -->
+            <div class="modal fade" id="myModal_0" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog" style="width: inherit;">
+                <div style="width:15%;height:500px; position: relative; float: left;"></div>
+                <div class="modal-content" style="width: 70%; position: relative; float: left;text-align: center;">
+                  <div class="modal-header" style="background-color:#d9d9d9;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">이미지 크게보기</h4>
+                  </div>
+                  <div class="modal-body">
+                    <img src="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xpf1/t31.0-8/12309828_916254681799712_3316598774840008792_o.jpg">
+                  </div>
+                  <div class="modal-footer" style="background-color:#d9d9d9;">
+                    <button type="button" class="btn btn-default btn-primary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+                <div style="width:15%;height:500px; position: relative; float: left;"></div>
+              </div>
+            </div>
+            <!--//img Modal-->
+            <% end %>
+            
+            
+            <% if params[:member] == "modifier" %>
+            <% @x = Scdl.find(params[:eid]) %>
+            <div class="col-md-12" style="background-color:#e6e6e6; margin-top:15px; border-radius:4px;border: 3px solid #c6c6c6;padding: 0%;">
+                <div class="col-md-8" style="height:450px;padding: 0%;background-color: #000;text-align: center;border-top-left-radius: 4px;border-bottom-left-radius: 4px;">
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal_0" style="position: absolute; right: 0%; top: 0%;">
+                      수정ing..
+                    </button>
+                    <form action="/scdl/scdl_save?member=modifier" enctype="multipart/form-data" method="POST" name="scdl_form" id="scdl_form">
+                        <style>
+                            .register_input{
+                                width: 75%;
+                                height: 40px;
+                                border-radius: 5px;
+                                font-size: 20px;
+                                padding-left: 1%;
+                                margin-bottom: 12px;
+                            }
+                            .register_text{
+                                text-align:center;
+                                color:#fff;
+                                font-size:20px;
+                                font-weight:bolder;
+                            }
+                            .rinput_time{
+                                width:17%;
+                                font-size: 20px;
+                            }
+                        </style>
+                        <input type="hidden" name="id" value="<%= @x.id %>" placeholder="" style="">
+                        <input type="hidden" name="scdl_password" value="120350" placeholder="" style="">
+                        <input type="text" name="scdl_img1" value="<%= @x.img1 %>" placeholder="이미지 주소(url)를 붙여넣으세요" style="width: 91%;height: 7%;float: left;"><br><br>
+                        <span class="register_text">날짜</span><br>
+                        <input class="register_input" type="date" name="date_day" value="<%= @x.date_day %>" placeholder="" style="width: 37%;"><br>
+                        <span class="register_text">일정 시작 시간 ~ 예상 종료 시간</span><br>
+                        <input class="register_input rinput_time" type="text" name="date_time_start" value="<%= @date_time_start %>" placeholder="ex) 13:00 " style=""><span class="register_text"> ~ </span>
+                        <input class="register_input rinput_time" type="text" name="date_time_end" value="<%= @x.date_time_end %>" placeholder="ex) 21:00 " style=""><br>
+                        <input class="register_input" type="text" name="scdl_title" value="<%= @x.title %>" placeholder="이름 ex)관리자 7호" style=""><br>
+                        <input class="register_input" type="text" name="scdl_content_detail" value="<%= @x.content_detail %>" placeholder="작성자의 설명 한 마디" style=""><br>
+                        <input class="register_input" type="text" name="scdl_type" value="<%= @x.action_type %>" placeholder="ex)공동행동 or 문화제 or 기자회견 ..." style=""><br>
+                        <input class="register_input" type="text" name="scdl_img2" value="<%= @x.img2 %>" placeholder="3~4개 키워드를 입력하세요 ex) 입력> '미동추 학생들 멋져요' // 출력> '#미동추 #학생들 #멋져요'" style="font-size: 14px;"><br>
+                        <input class="register_input" type="submit" name="" value="수정이 완료되면 눌러주세요" placeholder="" style="background-color: #429AEC;
+                                                                                                                    border: inherit;
+                                                                                                                    width: 100%;
+                                                                                                                    margin: 0px;
+                                                                                                                    border-radius: 0px;
+                                                                                                                    float: left;
+                                                                                                                    position: absolute;
+                                                                                                                    left: 0px;
+                                                                                                                    bottom: 0px;
+                                                                                                                    color: #fff;
+                                                                                                                    font-size: 25px;
+                                                                                                                    font-weight: bolder;">
+                    </form>
+                </div>
+                <div class="col-md-4" style="height:450px; background-color:#fff;padding: 0%;border-left: 1px solid #c6c6c6;border-radius: 4px;">
+                    <div class="col-md-12" style="padding:0%;height:26%;border: 1px solid #c6c6c6;border-top-right-radius: 4px;line-height: 1.2;">
+                        <div class="col-md-2" style="padding: 2%;height: 100%;">
+                            <img src="https://scontent-icn1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/12316202_858771864239877_3834390672364174481_n.jpg?oh=6ace156a3f8b2877207940d75dda81b6&oe=56EB5A6C" style="width:50px;">
+                        </div>
+                        <div calss="col-md-10" style="padding: 2%;">
+                            <p style="font-size: 18px;font-weight: bolder;">작성자 이름</p>
+                            <p style="font-size: 16px;margin-top: -7px;">작성자의 설명 한 마디</p>
+                            <p style="margin-top: -3px;color:#CF01FF;font-weight: bolder;font-size: 16px;">4~5개의 키워드</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12" style="padding:0.9% 0% 0% 2%;height:8%;border: 1px solid #c6c6c6;">
+                        <img src="http://new1.nurinori.com/nurinoriData/data/board/1340328328832/e18ed6faae0e85f22ae611c8673a5146.jpg" height="100%"> 
+                        <span style="font-weight: bolder;color: #a9a9a9;">X <span style="font-size: 16px;font-weight: bolder;color: red;">0</span> others like this.</span>
+                        <img src="https://s.ytimg.com/yts/img/avatar_720-vflYJnzBZ.png" style="height: 85%; margin-top: -4px;">
+                        <span style="font-weight: bolder;color: #a9a9a9;">X <span style="font-size: 16px;font-weight: bolder;color:#c6d222;">0</span>명이 참여합니다.</span>
+                    </div>
+                    <div class="col-md-12" style="padding:0%;height:50%;border: 1px solid #c6c6c6;background-color: #e6e6e6;">
+                    </div>
+                    
+                    <div class="col-md-12" style="padding: 1px 0% 1px 1%;height: 6%;border: 1px solid #c6c6c6;border-bottom-right-radius: 4px;border-bottom: 0px;">
+                        <input disabled type="text" style="height: 100%;border-radius: 5px;border: 1px solid #c2c2c2;width: 49%;line-height: 1;" placeholder=" UrName">
+                        <input disabled type="password" style="height: 100%;border-radius: 5px;border: 1px solid #c2c2c2;width: 49%;line-height: 1;" placeholder=" UrPassWord">
+                    </div>
+                    <div class="col-md-12" style="padding:1%;height:10%;border: 1px solid #c6c6c6;border-bottom-right-radius: 4px;border-top: 0px;">
+                        <button type="button" class="btn btn-sm" style="height: 100%;padding: 0%;border: none;width: 10%;border-radius: 5px;background-color: #429AEC;">
+                            <img src="https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/12341556_858791930904537_2166027737553217698_n.jpg?oh=16a69a396f7d18135ce292ce4b55736d&oe=571E6731&__gda__=1458045447_51b7b1da119830add8b049fc6722e54a" style="height: 70%;width: 70%;border-radius: 5px;">
+                        </button>
+                        <input disabled style="height: 100%;border-radius: 5px;border: 2px solid #c2c2c2;width: 75%;" placeholder="참여의 메세지 작성 후 오른쪽 버튼을 클릭!">
+                        <input disabled type="submit" style="width: 12%;height: 100%;border-radius: 5px;border: inherit;" value="^ㅅ^">
+                    </div>
+                </div>
+            </div>
+            <!--img Modal -->
+            <div class="modal fade" id="myModal_0" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog" style="width: inherit;">
+                <div style="width:15%;height:500px; position: relative; float: left;"></div>
+                <div class="modal-content" style="width: 70%; position: relative; float: left;text-align: center;">
+                  <div class="modal-header" style="background-color:#d9d9d9;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">이미지 크게보기</h4>
+                  </div>
+                  <div class="modal-body">
+                    <img src="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xpf1/t31.0-8/12309828_916254681799712_3316598774840008792_o.jpg">
+                  </div>
+                  <div class="modal-footer" style="background-color:#d9d9d9;">
+                    <button type="button" class="btn btn-default btn-primary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+                <div style="width:15%;height:500px; position: relative; float: left;"></div>
+              </div>
+            </div>
+            <!--//img Modal-->
+            <% end %>
+            
+            
+            
+            <% Scdl.where(:how_many_with => 0 ).reverse.each do |x| %>
+            <div id="slide_<%= x.id %>" class="col-md-12" style="background-color:#e6e6e6; margin-top:15px; border-radius:4px;border: 3px solid #c6c6c6;padding: 0%;">
+                <div class="col-md-8" style="height:450px;padding: 0%;text-align: center;background-color: #000;border-top-left-radius: 4px;border-bottom-left-radius: 4px;">
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal_<%= x.id %>" style="position: absolute; right: 0%; top: 0%;">
+                      크게보기
+                    </button>
+                    <% if params[:member] == "master" %>
+                    <a type="button" class="btn btn-primary btn-sm" href="/scdl/scdl_delete/<%= x.id %>" style="position: absolute; left: 0%; top: 7%;">
+                      삭제하기
+                    </a>
+                    <a type="button" class="btn btn-primary btn-sm" href="/scdl/info?eid=<%= x.id %>&member=modifier" style="position: absolute; left: 0%; top: 0%;">
+                      수정하기
+                    </a>
+                    <% end %>
+                    <img src="<%= x.img1 %>" style="height:100%;">
+                </div>
+                <div class="col-md-4" style="height:450px; background-color:#fff;padding: 0%;border-left: 1px solid #c6c6c6;border-radius: 4px;">
+                    <div class="col-md-12" style="padding:0%;height:26%;border: 1px solid #c6c6c6;border-top-right-radius: 4px;line-height: 1.2;">
+                        <div class="col-md-2" style="padding: 2%;height: 100%;">
+                            <img src="https://scontent-icn1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/12316202_858771864239877_3834390672364174481_n.jpg?oh=6ace156a3f8b2877207940d75dda81b6&oe=56EB5A6C" style="width:50px;">
+                        </div>
+                        <div calss="col-md-10" style="padding: 2%;">
+                            <p>
+                                <span style="font-size: 18px;font-weight: bolder;"><%= x.title %></span> 
+                                <span style="font-size: 15px;font-weight: bolder;float: right;"><%= x.date_day.to_s.last(5).first(2) + "월" %> <%= x.date_day.to_s.last(2) + "일" %> <%= x.date_time_start %> ~ (예상)<%= x.date_time_end %></span>
+                            </p>
+                            <p style="font-size: 16px;margin-top: -7px;"><%= x.content_detail %></p>
+                            <p style="margin-top: -3px;color:#CF01FF;font-weight: bolder;font-size: 16px;"><%= x.img2 %></p>
+                        </div>
+                    </div>
+                    <div class="col-md-12" style="padding:0.9% 0% 0% 2%;height:8%;border: 1px solid #c6c6c6;">
+                        <img src="http://new1.nurinori.com/nurinoriData/data/board/1340328328832/e18ed6faae0e85f22ae611c8673a5146.jpg" height="100%"> 
+                        <span style="font-weight: bolder;color: #a9a9a9;">X <span style="font-size: 16px;font-weight: bolder;color: red;"><%= x.how_many_read %></span> others like this.</span>
+                        <img src="https://s.ytimg.com/yts/img/avatar_720-vflYJnzBZ.png" style="height: 85%; margin-top: -4px;">
+                        <span style="font-weight: bolder;color: #a9a9a9;">X <span style="font-size: 16px;font-weight: bolder;color:#c6d222;"><%= ScdlReply.where(:scdl_id => x.id).count %></span>명이 참여합니다.</span>
+                    </div>
+                    <div class="col-md-12" style="padding:0%;height:53%;border: 1px solid #c6c6c6;background-color: #e6e6e6;">
+                        <% ScdlReply.where(:scdl_id => x.id ).reverse.each do |msg| %>
+                            <div>
+                                <div class="col-md-11" style="padding: 0px;">
+                                    <div class="col-md-2" style="padding: 5px;">
+                                        <img src="https://scontent.cdninstagram.com/hphotos-prn/t51.2885-15/s320x320/e15/10802518_589780384483264_1608793680_n.jpg" style="width:100%;height:100%;border-radius: 10px;">
+                                    </div>
+                                    <div class="col-md-10" style="padding-top: 5px;padding-left: 0px;">
+                                        <p style="margin: inherit;font-size: 15px;font-weight: bolder;color: #CF01FF;"><%= msg.name %></p>
+                                        <p style="margin-top: 3px;line-height: 1;"><%= msg.content %></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-1" style="padding: inherit;">
+                                    <a type="button" class="btn btn-sm" href="#" data-toggle="modal" data-target="#msgModal_<%= msg.id %>" style="padding: 0%;border: none;width: 90%;border-radius: 100%; /*background-color: #429AEC;*/ margin: 7px 0px 0px 0px;">
+                                        <img src="http://images.vectorhq.com/images/premium/thumbs/199/recycle-bin-sign-icon-bin-symbol-circle-flat-button-with-shadow-modern-ui-website-navigation-vector_199494131.jpg" style="width: 75%;border-radius: 100%;">
+                                    </a>
+                                </div>
+                            </div>
+                            <!--ScdlReply DELETE Modal-->
+                            <div class="modal fade" id="msgModal_<%= msg.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                              <div class="modal-dialog" style="">
+                                <div style="width:35%;height:500px; position: relative; float: left;"></div>
+                                <form action="/scdl/reply_delete" enctype="multipart/form-data" method="POST" name="reply_delete" id="reply_delete">
+                                    <div class="modal-content" style="/*width: 70%; position: relative;*/ float: left;text-align: center;">
+                                      <div class="modal-header" style="background-color:#d9d9d9;border-top-left-radius: 5px;border-top-right-radius: 5px;">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">댓글을 삭제합니까?</h4>
+                                      </div>
+                                      <div class="modal-body">
+                                        <input type="password" name="password" value="" placeholder="입력하신 댓글의 비밀번호">
+                                        <input type="hidden" name="id" value="<%= msg.id %>">
+                                      </div>
+                                      <div class="modal-footer" style="background-color:#d9d9d9;border-bottom-right-radius: 5px;border-bottom-left-radius: 5px;">
+                                        <input type="submit" value="삭제하기" class="btn btn-default btn-primary" style="width:100%;">
+                                      </div>
+                                    </div>
+                                </form>
+                                <div style="width:15%;height:500px; position: relative; float: left;"></div>
+                              </div>
+                            </div>
+                            <!--/-->
+                        <% end %>
+                    </div>
+                    <form action="/scdl/reply_save" enctype="multipart/form-data" method="POST" name="reply_form" id="reply_form">
+                        <div class="col-md-12" style="padding: 1px 0% 1px 1%;height: 6%;border: 1px solid #c6c6c6;border-bottom-right-radius: 4px;border-bottom: 0px;">
+                            <input type="text" name="name" style="height: 100%;border-radius: 5px;border: 1px solid #c2c2c2;width: 49%;line-height: 1;" placeholder=" UrName">
+                            <input type="hidden" name="scdl_id" value="<%= x.id %>">
+                            <input type="password" name="password" style="height: 100%;border-radius: 5px;border: 1px solid #c2c2c2;width: 49%;line-height: 1;" placeholder=" UrPassWord">
+                        </div>
+                        <div class="col-md-12" style="padding:1%;height:10%;border: 1px solid #c6c6c6;border-bottom-right-radius: 4px;border-top: 0px;">
+                            <a type="button" class="btn btn-sm" href="/scdl/likefy/<%= x.id %>" style="height: 100%;padding: 0%;border: none;width: 10%;border-radius: 5px;background-color: #429AEC;">
+                                <img src="https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/12341556_858791930904537_2166027737553217698_n.jpg?oh=16a69a396f7d18135ce292ce4b55736d&oe=571E6731&__gda__=1458045447_51b7b1da119830add8b049fc6722e54a" style="height: 70%;width: 70%;border-radius: 5px;">
+                            </a>
+                            <input type="text" name="content" style="height: 100%;border-radius: 5px;border: 2px solid #c2c2c2;width: 75%;" placeholder="참여의 메세지 작성 후 오른쪽 버튼을 클릭!">
+                            <input type="submit" style="width: 12%;height: 100%;border-radius: 5px;border: inherit;" value="^ㅅ^">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--img Modal -->
+            <div class="modal fade" id="myModal_<%= x.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog" style="width: inherit;">
+                <div style="width:15%;height:500px; position: relative; float: left;"></div>
+                <div class="modal-content" style="width: 70%; position: relative; float: left;text-align: center;">
+                  <div class="modal-header" style="background-color:#d9d9d9;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">이미지 크게보기</h4>
+                  </div>
+                  <div class="modal-body">
+                    <img src="<%= x.img1 %>">
+                  </div>
+                  <div class="modal-footer" style="background-color:#d9d9d9;">
+                    <button type="button" class="btn btn-default btn-primary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+                <div style="width:15%;height:500px; position: relative; float: left;"></div>
+              </div>
+            </div>
+            <!--//img Modal-->
+            <% end %>
+        </div>
+        <div class="col-md-2" style="background-color:;"></div>
+    </div>
+</div>
+<a href="/scdl/info?member=master" style="color:black;">--></a>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<!-- Button trigger modal -->

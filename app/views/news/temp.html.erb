@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="https://bootswatch.com/superhero/bootstrap.min.css" type="text/css"/>
+<!--<link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.css" type="text/css"/>-->
+<!--<link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css" type="text/css"/>-->
+<!--<link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css" type="text/css"/>-->
+<!--<link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css" type="text/css"/>-->
+<!--<link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css" type="text/css"/>-->
+<div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="/">홈으로</a></li>
+            <li role="presentation"><a href="/news/atc_uploader">기사 업로드</a></li>
+            <li role="presentation"><a href="/scdl/info">일정</a></li>
+            <li role="presentation"><a href="/idea/info">IDEAS</a></li>
+            <li role="presentation"><a href="/agora/info">자유게시판</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted"><b>NEWS.For DGU.</b></h3>
+      </div>
+
+      <div class="jumbotron" style="background-image:url(https://scontent-icn1-1.xx.fbcdn.net/hphotos-xpf1/t31.0-8/12309489_914834081941772_5029851923782035944_o.jpg); background-size: cover;">
+        <!--<h1></h1>-->
+        <!--<p class="lead"></p>-->
+        <!--<p></p>-->
+        <div style="height:300px;"></div>
+      </div>
+
+      <div class="row marketing">
+          기사의 순서는 날짜 순서와 반드시 일치하지는 않습니다.
+        <% i = Article.count %>
+        <% Article.all.reverse.each do |atc| %>
+        <div class="col-lg-6">
+          <a href="<%= atc.link %>" target="_blank" style="text-decoration: none;">
+              <div>
+                  <p><%= i %>번째 기사</p>
+                  <img src="<%= atc.img1.url %>" width="100%">
+                  <h4><%= atc.title %></h4>
+                  <p><%= atc.subtitle %></p>
+                  <p><%= atc.org %></p>
+              </div>
+          </a>
+        </div>
+            <% i = i - 1 %>
+        <% end %>
+      </div>
+      <footer class="footer">
+        <p>&copy; Company 2014</p>
+      </footer>
+      
+</div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>

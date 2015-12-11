@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>for DGU</title>
+  
+  <!-- 합쳐지고 최소화된 최신 CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+   <!--부가적인 테마 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+  <%= render :partial => 'layouts/jumbotron_narrow_css' %>
+  <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  
+  <!-- Custom styles for this template -->
+  <!--<link href="app/assets/stylesheets/carousel.css" rel="stylesheet">-->
+  <!--=======================================================================================================-->
+        <!-- Stylesheets
+  <!--    	============================================= -->
+  <!--    	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />-->
+  <!--    	<link rel="stylesheet" href="css/style.css" type="text/css" />-->
+      
+      	<!-- One Page Module Specific Stylesheet -->
+  <!--    	<link rel="stylesheet" href="css/onepage.css" type="text/css" />-->
+      	<!-- / -->
+      
+  <!--    	<link rel="stylesheet" href="css/dark.css" type="text/css" />-->
+  <!--    	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />-->
+  <!--    	<link rel="stylesheet" href="css/et-line.css" type="text/css" />-->
+  <!--    	<link rel="stylesheet" href="css/animate.css" type="text/css" />-->
+  <!--    	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />-->
+      
+  <!--    	<link rel="stylesheet" href="css/fonts.css" type="text/css" />-->
+      
+  <!--    	<link rel="stylesheet" href="css/responsive.css" type="text/css" />-->
+  <!--    	<link rel="stylesheet" href="css/noto-fonts.css" type="text/css" />-->
+  <!--    	<link rel="stylesheet" href="css/for_dgu.css?v=20150601" type="text/css" />-->
+  <!--    	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />-->
+      	<!--[if lt IE 9]>
+      	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+      	<![endif]-->
+      
+      	<!-- External JavaScripts
+      	============================================= -->
+      	<!--<script type="text/javascript" src="js/jquery.js"></script>-->
+      	<!--<script type="text/javascript" src="js/plugins.js"></script>-->
+      	
+        <!--  AngularJS -->
+       <!-- <script src="js/angular.min.js"></script>-->
+       <!-- <script src="js/UnivController.js"></script>-->
+    
+        <!-- for slide -->
+        <!--<link rel="stylesheet" type="text/css" href="css/demo_bak.css" />-->
+       <!-- <link rel="stylesheet" type="text/css" href="css/elastislide.css" />-->
+       <!-- <link rel="stylesheet" type="text/css" href="css/custom.css" />-->
+       <!-- <script src="js/modernizr.custom.17475.js"></script>-->
+  <!--=======================================================================================================-->
+  
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="stretched side-push-panel" ng-app="myApp" ng-controller="univController">
+
+<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<link rel="stylesheet" href="https://bootswatch.com/superhero/bootstrap.min.css" type="text/css"/>
+<!--<link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.css" type="text/css"/>-->
+<!--<link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css" type="text/css"/>-->
+<!--<link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css" type="text/css"/>-->
+<!--<link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css" type="text/css"/>-->
+<!--<link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css" type="text/css"/>-->
+<div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="/">홈으로</a></li>
+            <li role="presentation"><a href="/scdl/info">일정</a></li>
+            <li role="presentation"><a href="/news/info">NEWS</a></li>
+            <li role="presentation"><a href="/idea/info">IDEAS</a></li>
+            <li role="presentation"><a href="/agora/info">자유게시판</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted"><b>일정.For DGU.</b></h3>
+      </div>
+      <% j_scdl = @scdl %>
+      <div class="jumbotron" style="background-image:url(<%#= j_scdl.img1.url %>); background-size: cover;">
+        <div>
+            <img src="<%= j_scdl.img1 %>" width="100%">
+        </div>
+        <% if j_scdl.date_time_start.first(2).to_i > 12 %>
+            <h1 style=""><%= j_scdl.date_day.first(7).last(2) %>/<%= j_scdl.date_day.last(2) %> 오후 <%= j_scdl.date_time_start.first(2) %>시</h1>
+        <% elsif j_scdl.date_time_start.first(2).to_i <= 12 %>
+            <h1 style=""><%= j_scdl.date_day.first(7).last(2) %>/<%= j_scdl.date_day.last(2) %> 오전 <%= j_scdl.date_time_start.first(2) %>시</h1>
+        <% end %>
+        <h3 class="lead" style=""><%= j_scdl.content_detail %></h3>
+      </div>
+      <!-- Operator -->
+    	<div class="container" style="width: 100%;padding: 0px;">
+    		<div class="common-height clearfix ll-sponser">
+    		    <!--<span class="li-font-bold" style="color:#000; font-size:20px;">응원의 한 마디</span>-->
+    		    <!--<b><em><span style="color:#4238e3; font-size:24px;">곁에 있을께..</span></em></b>-->
+    		    <!--<img src="images/sentense.png" style="width: 11%;margin-bottom: 15px;margin-left: -25px;">&nbsp;&nbsp;-->
+    		    <!--<img src="images/sentense2.png" style="margin-top: -32px;width: 13%;"> -->
+    		    <span style="position:; right:20px;">현재 총 <b><%= ScdlReply.where(:scdl_id => j_scdl.id ).count %></b> 명이 참여를 신청했습니다.</span>
+    		    <div class="panel panel-default" style="padding-top: 15px;">
+                  <!-- Default panel contents -->
+                  <div class="col-md-12" align="center">
+                      <form action="/scdl/reply_save" enctype="multipart/form-data" method="POST" name="reply_form" id="reply_form">
+                          
+                          <div class="col-md-6">
+                              <input type="text" name="name" value="" placeholder="본인의 이름(익명가능)을 입력해주세요" style="width:100%;height: 45px;border-radius: 5px;">
+                              <input type="hidden" name="scdl_id" value="<%= j_scdl.id %>">  
+                          </div>  
+                          <div class="col-md-6">
+                              <input type="password" name="password" value="" placeholder="삭제시 확인할 숫자 6자리를 입력하세요" style="width:100%;height: 45px;border-radius: 5px;">  
+                          </div>
+                          
+                          <div class="col-md-12" style="margin-top: 15px;margin-bottom: 15px;">
+                              <input type="text" name="content" placeholder="참여의 메세지를 보내주세요" style="width:100%;height: 45px;border-radius: 5px;">
+                              <input type="submit" value="참가하기" style="background-color: #4238e3;color: white;font-weight: bolder;border-radius: 5px; border: none; width: 100%; height: 40px; margin-top: 15px;">
+                          </div>
+                      </form>
+                  </div>
+                
+                  <!-- Table -->
+                  <table class="table">
+                      <% ii = ScdlReply.where(:scdl_id => j_scdl.id ).count %>
+                      <% ScdlReply.where(:scdl_id => j_scdl.id ).reverse.each do |msg| %>
+                          <div class="col-md-12" style="/* margin: 10px; */border-bottom: 2px solid #F5F5f5;/* padding: 15px; */">
+                              <form action="/scdl/reply_delete/<%= msg.id %>" enctype="multipart/form-data" method="POST" name="reply_delete" id="reply_delete">
+                                  <div class="col-md-4 col-sm-12" style="padding: 10px;">
+                                      <span style="font-size: 16px;margin-right:13px;font-weight: bolder;">No.<%= ii %></span> <span style="margin-right: 10px;font-size: 18px;"><%= msg.name %></span>
+                                  </div>
+                                  <div class="col-md-5 col-sm-12" style="padding: 8px;">
+                                      <span style="font-size: 18px;"><%= msg.content %></span>
+                                  </div>
+                                  <div class="col-md-1 col-sm-12" style="padding: 5px;">
+                                      <span style="font-size: 15px;">
+                                          <input type="submit" value="삭제" style="widht:100%;">
+                                      </span>
+                                  </div>
+                                  <div class="col-md-2 col-sm-12" style="padding: 5px;">
+                                      <input type="password" name="password" placeholder="확인번호" style="width: 100%;">
+                                  </div>
+                              </form>
+                          </div>
+                          <% ii = ii - 1 %>
+                      <% end %>
+                      <!--/-->
+                  </table>
+                </div>
+    		</div>
+    	</div>
+
+      <footer class="footer">
+        <p>&copy; Get START at 2015.12.03<a href="/scdl/info?member=master">.</a></p>
+      </footer>
+
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
