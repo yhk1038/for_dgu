@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'figaro'
+gem 'mysql2', '~> 0.4.2'
 gem 'devise'
 gem 'carrierwave'
 gem 'fog'
