@@ -1,5 +1,5 @@
 
-<div class="col-md-12" style="height:800px;padding:0px;margin-top: -20px;">
+<div class="col-md-12" style="height:100%;padding:0px;margin-top: -20px;">
     <div class="col-md-12" style="background-color:#fff; padding:15px 0px 15px 15px;position: fixed;z-index: 100; border-bottom: 1px solid #eeeeee;">
         <div id="logo" class="col-md-2">
             <a href="/" class="standard-logo" data-dark-logo="images/logo1.png">
@@ -12,20 +12,140 @@
 					<li style="position:relative; float: left;width: 13.5%;"><a href="/" data-href="#wrapper" style="color:#000;"><div>HOME</div></a></li>
 					<li style="position:relative; float: left;width: 13.5%;"><a href="/" data-href="#section-about" style="color:#000;"><div>ABOUT</div></a></li>
 					<li style="position:relative; float: left;width: 13.5%;"><a href="/news/info" data-href="#section-univ" style="color:#000;"><div>NEWS</div></a></li>
-					<li style="position:relative; float: left;width: 13.5%;"><a href="#" data-href="#section-works" style="color:#1ABC9C;"><div>일정알림</div></a></li>
+					<li style="position:relative; float: left;width: 13.5%;"><a href="/scdl/info" data-href="#section-works" style="color:#000;"><div>일정알림</div></a></li>
 					<li style="position:relative; float: left;width: 13.5%;"><a href="#" data-href="#section-review" style="color:#000;"><div>IDEAS</div></a></li>
-					<li style="position:relative; float: left;width: 13.5%;"><a href="#" data-href="#section-services" style="color:#000;"><div>자유게시판</div></a></li>
+					<li style="position:relative; float: left;width: 13.5%;"><a href="#" data-href="#section-services" style="color:#1ABC9C;"><div>자유게시판</div></a></li>
 					<li style="position:relative; float: left;width: 13.5%;"><a href="#" data-href="#section-operator" style="color:#000;"><div>응원메세지</div></a></li>
 				</ul>
 			</nav>
         </div>
     </div>
     <div class="col-md-12" style="padding:0%;height:100%;margin-top: 70px;">
-        <div class="col-md-2" style="background-color:#acacac;height:100%;"></div>
-        <div class="col-md-8" style="background-color:#e9e9e9;height:100%; text-align:center;background-image:url(http://etorrent.co.kr/data/file0207/star/3076036732_FryIh1ns_unnamed.jpg); background-size:cover;">
-            <p style="font-size:80px;font-weight:bolder;color:#000;margin-top:200px;">개발중입니닷</p>
-        
+        <div class="col-md-2" style="background-color:#cdced0;height:1334px;padding:0%;">
+            <div class="col-md-12" style="padding:0%; height:100%;position:fixed;">
+                <div style="padding:0%; height:250px; border-bottom:2px solid #000;"></div>
+                <p style="color:#fff; font-size:30px; font-weight:bolder;">dkdkdkdkdk</p>
+            </div>
         </div>
-        <div class="col-md-2" style="background-color:#acacac;height:100%;"></div>
+        <div class="col-md-10" style="background-color:#E1E1E1;height:1334px; text-align:center; padding: 0%;">
+            <div class="col-md-12" style="background-color:#fff; padding:10px 0px 10px 15px;z-index: 10; border-bottom: 1px solid #eeeeee;">
+                <div class="col-md-12">
+                    <nav id="primary-menu" class="">
+        				<ul class="nav one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="65" style="float:left; font-weight: bolder;width: 44.5%; font-size: 12px; text-align: center;">
+        					<li style="position:relative; float: left;width: 13.5%;">
+        					    <a class="black_font" href="/agora/info?category=union_groups" style="<%= "color:#1ABC9C;" if params[:category] == "union_groups" %>">
+        					        <div>학과별</div></a></li>
+        					<li style="position:relative; float: left;width: 13.5%;">
+        					    <a class="black_font" href="/agora/info?category=create_groups" style="<%= "color:#1ABC9C;" if params[:category] == "create_groups" %>">
+        					        <div>제작소</div></a></li>
+        					<li style="position:relative; float: left;width: 13.5%;">
+        					    <a class="black_font" href="/agora/info?category=hobby_groups" style="<%= "color:#1ABC9C;" if params[:category] == "hobby_groups" %>">
+        					        <div>관심사</div></a></li>
+        					<li style="position:relative; float: left;width: 13.5%;">
+        					    <a href="/agora/info?category=" style="color:#000;">
+        					        <div>category4</div></a></li>
+        					<li style="position:relative; float: left;width: 13.5%;">
+        					    <a href="/agora/info?category=" style="color:#000;">
+        					        <div>category5</div></a></li>
+        					<li style="position:relative; float: left;width: 13.5%;">
+        					    <a href="/agora/info?category=" style="color:#000;">
+        					        <div>category6</div></a></li>
+        					<li style="position:relative; float: left;width: 13.5%;">
+        					    <a href="/agora/info?category=" style="color:#000;">
+        					        <div>category7</div></a></li>
+        				</ul>
+        			</nav>
+                </div>
+            </div>
+            <div class="col-md-12" style="height:95%; text-align:center; padding-top: 1%;">
+                <% category_names = ["union_groups","create_groups","hobby_groups"] %>
+                <% category_names.each do |ctname| %>
+                    <% if params[:category] == "#{ctname}" %>
+                        <!--임시로 자료넣음-->
+                        <% if ctname == "union_groups" %>
+                            <% title = "정외과 학생회 동고동락" %>
+                            <% img_url = "https://politics.dongguk.edu/wp-content/uploads/2015/05/05.jpg" %>
+                            <% new = 3 %>
+                            <% @tmp = 1 %>
+                        <% end %>
+                        <% if ctname == "create_groups" %>
+                            <% title = "합성 짤방" %>
+                            <% img_url = "http://fimg3.pann.com/new/download.jsp?FileID=33621011" %>
+                            <% new = 7 %>
+                            <% @tmp = 3 %>
+                        <% end %>
+                        <% if ctname == "hobby_groups" %>
+                            <% title = "맛집찾아" %>
+                            <% img_url = "http://cfile236.uf.daum.net/image/2102834052D29C8202FF9F" %>
+                            <% new = 4 %>
+                            <% @tmp = 2 %>
+                        <% end %>
+                        <!--/임시자료-->
+                        <% n = 1 %>
+                        <% loop do %>
+                        <% break if n > @tmp %>
+                        <div class="board_card_div" style="">
+                            <div style="width:100%;height:94%;padding:0%;border:0px solid #fff;background-color: #CCD3DC;">
+                                <div class="board_card_div_intop" style="background-image:url(<%= img_url %>);">
+                                    
+                                </div>
+                                <div class="board_card_div_inflow">
+                                    <br>
+                                    <p style="line-height: 0;"><%= title %></p>
+                                    <p>새 게시물 <%= new %></p>
+                                </div>
+                            </div>
+                        </div>
+                        <% n = n+1 %>
+                        <% end %>
+                    <% end %>
+                <% end %>
+                <% i = 1 %>
+                <% loop do %>
+                <% break if i > (20 - @tmp.to_i) %>
+                <div class="board_card_div" style="">
+                    <div style="width:100%;height:94%;padding:0%;border:0px solid #fff;background-color: #CCD3DC;">
+                        <div class="board_card_div_intop">
+                            
+                        </div>
+                        <div class="board_card_div_inflow">
+                            <br>
+                            <p style="line-height: 0;">아 겁나졸려</p>
+                            <p>왜이렇게 졸리지</p>
+                        </div>
+                    </div>
+                </div>
+                <% i = i+1 %>
+                <% end %>
+            </div>
+        </div>
     </div>
 </div>
+
+<style>
+    .black_font{
+        color:#000;
+    }
+    .board_card_div{
+        width:20%; 
+        height:315px; 
+        /*border:5px solid #fff; */
+        background-color:#E1E1E1; 
+        float:left;
+        margin:0px 0px 0px 0px;
+        padding:1% 1% 0% 1%;
+        text-align:center;
+    }
+    .board_card_div_intop{
+        width:100%;
+        height:78%;
+        background-image:url(http://etorrent.co.kr/data/file0207/star/3076036732_FryIh1ns_unnamed.jpg);
+        background-size:cover;
+        border: 5px solid #fff;
+    }
+    .board_card_div_inflow{
+        width:100%;
+        height:26%;
+        /*background-color: skyblue;*/
+    }
+</style>

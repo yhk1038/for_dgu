@@ -1,0 +1,108 @@
+<div class="col-md-12" style="padding:0%; width:100%; height:1300px;margin-top: -20px;">
+    <div class="col-md-12" style="background-color:#fff; padding:15px 0px 15px 15px;position: fixed;z-index: 100; border-bottom: 1px solid #eeeeee;">
+        <div id="logo" class="col-md-2">
+            <a href="/" class="standard-logo" data-dark-logo="images/logo1.png">
+                <img style="width:84%;" src="https://scontent-icn1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/12313669_858709030912827_2771614648691609873_n.jpg?oh=79e255f22524ec80356c35db1339e37f&oe=56E646BE" alt="for DGU">
+            </a>
+        </div>
+        <div class="col-md-10">
+            <nav id="primary-menu" class="">
+    			<ul class="nav one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="65" style="float:right; font-weight: bolder;width: 44.5%; font-size: 12px; text-align: center;">
+    				<li style="position:relative; float: left;width: 13.5%;"><a href="/" data-href="#wrapper" style="color:#000;"><div>HOME</div></a></li>
+    				<li style="position:relative; float: left;width: 13.5%;"><a href="#" data-href="#section-about" style="color:#1ABC9C;"><div>PEOPLE</div></a></li>
+    				<li style="position:relative; float: left;width: 13.5%;"><a href="/news/info" data-href="#section-univ" style="color:#000;"><div>NEWS</div></a></li>
+    				<li style="position:relative; float: left;width: 13.5%;"><a href="/scdl/info" data-href="#section-works" style="color:#000;"><div>일정알림</div></a></li>
+    				<li style="position:relative; float: left;width: 13.5%;"><a href="#" data-href="#section-review" style="color:#000;"><div>IDEAS</div></a></li>
+    				<li style="position:relative; float: left;width: 13.5%;"><a href="#" data-href="#section-services" style="color:#000;"><div>자유게시판</div></a></li>
+    				<li style="position:relative; float: left;width: 13.5%;"><a href="#" data-href="#section-operator" style="color:#000;"><div>응원메세지</div></a></li>
+    			</ul>
+    		</nav>
+        </div>
+    </div>
+    
+    <% if params[:char_name] == "ChoiJangHun" %>
+        <div class="col-md-12" style="padding:0%; height:500px; background-image:url(http://ojsfile.ohmynews.com/STD_IMG_FILE/2015/0421/IE001822105_STD.JPG);background-size:cover;margin-top: 72px;">
+            <div class="col-md-12" style="padding:0%; height:100%; background-color:#000;opacity:0.5;"></div>
+            
+            <!--<div class="col-md-3" style="height:100%;position:absolute;float:left;"></div>-->
+            <center><div class="col-md-12" style="padding:8.5% 0% 0% 0%; height:100%; width:50%; margin:0% 25% 0% 25%; /*background-color:#fff;*/ position:absolute;">
+                <span style="font-size:18px; color:#fff; text-decoration:underline;">2015년 대학원 총학생회장 최장훈</span>
+                <p style="font-size:35px; color:#fff; margin-top:20px;">고공농성에서 투신소동까지. 그의 이야기</p>
+                <p style="font-size:27px; color:#fff; bottom:3%; position:absolute;">"하고싶은말 한 마디 하고싶은말 한 마디 하고싶은말 한 마디 하고싶은말 한 마디 하고싶은말 한 마디 하고싶은말 한 마디 하고싶은말 한 마디"</p>
+            </div></center>
+            <!--<div class="col-md-3" style="height:100%;"></div>-->
+            
+        </div>
+        
+        
+            
+        <div class="col-md-12" style="background-color:#fff; padding:0px; z-index: 10; border-bottom: 1px solid #eeeeee;">
+            <div class="col-md-12">
+                <nav id="primary-menu" class="" style="text-align:center; width:100%;">
+    				<ul class="nav one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="65" style="float:left; font-weight: bolder;width: 100%; font-size: 15px; text-align: center;padding: 0% 41% 0% 41%;">
+    					<li style="position:relative; float: left;width: 33.3%;">
+    					    <a class="black_font" href="/people/info?char_name=ChoiJangHun&category=introduction" style="padding: 17px 15px;<%= "color:#1ABC9C; border-bottom:2px solid blue;" if params[:category] == "introduction" %>">
+    					        <div>소개</div></a></li>
+    					<li style="position:relative; float: left;width: 33.3%;">
+    					    <a class="black_font" href="/people/info?char_name=ChoiJangHun&category=episodes" style="padding: 17px 15px;<%= "color:#1ABC9C; border-bottom:2px solid blue;" if params[:category] == "episodes" || params[:category] == nil %>">
+    					        <div>연재</div></a></li>
+    					<li style="position:relative; float: left;width: 33.3%;">
+    					    <a class="black_font" href="/people/info?char_name=ChoiJangHun&category=massage" style="padding: 17px 15px;<%= "color:#1ABC9C; border-bottom:2px solid blue;" if params[:category] == "massage" %>">
+    					        <div>To.장훈</div></a></li>
+    				</ul>
+    			</nav>
+            </div>
+        </div>
+            
+        <div class="col-md-12" style="padding:0px;">
+            <div class="col-md-12" style="padding:0px 31.5%;">
+            
+            <% if params[:category] == "introduction" %>
+            <% end %>
+            
+            <% if params[:category] == "episodes" || params[:category] == nil %>
+                <!--에피소드 등록하기 버튼-->
+                <% if params[:member] == "ChoiJangHun" %>
+                <a href="/people/uploader">
+                    <div style="padding: 10px 0px; width:700px; height:127px; border-bottom:1px solid #eeeeee; background-color:#eeeeee;">
+                        <a href="/people/uploader" style="all:initial; width:80%; font-size:17px; cursor:pointer;">
+                            <spna style="color:#1ABC9C;"> 다음화</spna> 글쓰기
+                        </a>
+                        <div style="float:right; width:20%; height:100%;">
+                            <img src="" alt="사진을 넣어주세요" style="width:100%;height:100%;">
+                        </div>
+                    </div>
+                </a>
+                <% end %>
+                <!--/-->
+                <!--에피소드s-->
+                <% n = 7 %>
+                <% loop do %>
+                <% break if n <= 0 %>
+                <div style="padding: 10px 0px; width:700px; height:127px; border-bottom:1px solid #eeeeee;">
+                    <a href="/people/info?char_name=ChoiJangHun&id=<%=n%>" style="all:initial; width:80%; font-size:17px; cursor:pointer;">
+                        <spna style="color:#1ABC9C;"><%= n %>화</spna> 고공농성에 대한 뒷 이야기들(<%= n %>)
+                    </a>
+                    <div style="float:right; width:20%; height:100%; background-color:blue;">
+                        <img src="http://www.dgugspress.com/news/photo/201506/1407_681_3316.jpg" style="width:100%;height:100%;">
+                    </div>
+                </div>
+                <% n = n-1 %>
+                <% end %>
+                <!--/-->
+            <% end %>
+            
+            <% if params[:category] == "massage" %>
+            <% end %>
+            </div>
+        </div>
+    <% end %>
+    
+    <div class="col-md-12" style="padding:0px; height:75px; border-top: 10px solid #ebefee;">
+        <center>
+            <p>
+                <a href="/people/info?char_name=<%= params[:char_name] %>&member=<%= params[:char_name] %>">©</a> Kakao Corp.
+            </p>
+        </center>
+    </div>
+</div>

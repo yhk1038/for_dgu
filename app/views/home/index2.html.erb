@@ -260,7 +260,7 @@
         									<% unless Onair.where(:who_name => "#{nm}").count == 0 %>
             									<% people = Onair.where(:who_name => "#{nm}").last %>
             									<div class="col-md-3 col-sm-6 ll-service-pd" height="347px;">
-            										<a href="" target="_blank">
+            										<a href="/people/info" target="_blank">
             											<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
             												<img src="<%= people.img1 %>" class="ll-service-image">
             												<h3><%= people.who_name + "(#{people.who_did})" %></h3>
@@ -273,13 +273,13 @@
             									<% end %>
             								<% end %>
         									<div class="col-md-3 col-sm-6 ll-service-pd" height="347px;">
-        										<a href="http://jasoseol.com" target="_blank">
+        										<a href="/people/info?char_name=ChoiJangHun" target="_blank">
         											<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
-        												<img src="images/services/jasoseol.jpg" class="ll-service-image">
-        												<h3>자소설닷컴</h3>
-        												<p>자기소개서 토탈솔루션</p>
-        												<span>19만개 이상의 자기소개서 보유. 시드 펀딩 완료.</span>
-        												<a href="http://jasoseol.com" target="_blank">http://jasoseol.com</a>
+        												<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRmCl2k5yWbcP_Aq2XUPZUyxARXYXHyJqRrB_VXHVlOknJHtNnb" class="ll-service-image" height="150px">
+        												<h3>최장훈</h3>
+        												<p>2015년 대학원 총학생회장</p>
+        												<span>고공농성에서 투신소동까지. 그의 이야기</span>
+        												<a href="/people/info?char_name=ChoiJangHun" target="_blank">바로가기</a>
         											</div>
         										</a>
         									</div>
