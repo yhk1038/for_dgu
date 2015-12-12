@@ -251,60 +251,61 @@
         										</a>
         									</div>
         									<% end %>
-        									
-        									<div class="col-md-12 col-sm-12" style="height:160px!;">
-        									    <p style="font-weight:bold; font-size:25px; margin: 100px 0px 20px 0px;">인물 HOT</p>
-        									</div>
-        									<% name = ['김건중','최장훈','최광백','안드레'] %>
-        									<% name.each do |nm| %>
-        									<% unless Onair.where(:who_name => "#{nm}").count == 0 %>
-            									<% people = Onair.where(:who_name => "#{nm}").last %>
-            									<div class="col-md-3 col-sm-6 ll-service-pd" height="347px;">
-            										<a href="/people/info" target="_blank">
-            											<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
-            												<img src="<%= people.img1 %>" class="ll-service-image">
-            												<h3><%= people.who_name + "(#{people.who_did})" %></h3>
-            												<p>최근 소식 : <%= people.date_day %></p>
-            												<span><%= people.who_status.first(13) %>..</span>
-            												<a>자세히 보기</a>
-            											</div>
-            										</a>
-            									</div>
-            									<% end %>
-            								<% end %>
-        									<div class="col-md-3 col-sm-6 ll-service-pd" height="347px;">
-        										<a href="/people/info?char_name=ChoiJangHun" target="_blank">
-        											<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
-        												<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRmCl2k5yWbcP_Aq2XUPZUyxARXYXHyJqRrB_VXHVlOknJHtNnb" class="ll-service-image" height="150px">
-        												<h3>최장훈</h3>
-        												<p>2015년 대학원 총학생회장</p>
-        												<span>고공농성에서 투신소동까지. 그의 이야기</span>
-        												<a href="/people/info?char_name=ChoiJangHun" target="_blank">바로가기</a>
-        											</div>
-        										</a>
-        									</div>
-        									<div class="col-md-3 col-sm-6 ll-service-pd" height="347px;">
-        										<a href="http://togedule.com" target="_blank">
-        											<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
-        												<img src="images/services/togedule.jpg" class="ll-service-image">
-        												<h3>투게쥴</h3>
-        												<p>여럿이 시간 약속 잡을 때는?</p>
-        												<span>친구끼리 비는 시간 찾아서 약속시간 후보 알려주기 </span>
-        												<a href="http://togedule.com" traget="_blank">http://togedule.com</a>
-        											</div>
-        										</a>
-        									</div>
-        									<div class="col-md-3 col-sm-6 ll-service-pd" height="347px;">
-        										<a href="http://jikbakguri.com" target="_blank">
-        											<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
-        												<img src="images/services/avsearch.jpg" class="ll-service-image">
-        												<h3>직박구리</h3>
-        												<p>건국이래 가장 야동 잘 찾아주는 사이트</p>
-        												<span>야동 평가/추천 서비스 평균 하루 방문자 n만</span>
-        												<a href="http://jikbakguri.com" target="_blank">http://jikbakguri.com</a>
-        											</div>
-        										</a>
-        									</div>
+        						<!--임시폐쇄구간-->
+        									<!--<div class="col-md-12 col-sm-12" style="height:160px!;">-->
+        									<!--    <p style="font-weight:bold; font-size:25px; margin: 100px 0px 20px 0px;">인물 HOT</p>-->
+        									<!--</div>-->
+        									<!--<% name = ['김건중','최장훈','최광백','안드레'] %>-->
+        									<!--<% name.each do |nm| %>-->
+        									<!--<% unless Onair.where(:who_name => "#{nm}").count == 0 %>-->
+            					<!--				<% people = Onair.where(:who_name => "#{nm}").last %>-->
+            					<!--				<div class="col-md-3 col-sm-6 ll-service-pd" height="347px;">-->
+            					<!--					<a href="/people/info" target="_blank">-->
+            					<!--						<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">-->
+            					<!--							<img src="<%#= people.img1 %>" class="ll-service-image">-->
+            					<!--							<h3><%#= people.who_name + "(#{people.who_did})" %></h3>-->
+            					<!--							<p>최근 소식 : <%#= people.date_day %></p>-->
+            					<!--							<span><%#= people.who_status.first(13) %>..</span>-->
+            					<!--							<a>자세히 보기</a>-->
+            					<!--						</div>-->
+            					<!--					</a>-->
+            					<!--				</div>-->
+            					<!--				<% end %>-->
+            					<!--			<% end %>-->
+        									<!--<div class="col-md-3 col-sm-6 ll-service-pd" height="347px;">-->
+        									<!--	<a href="/people/info?char_name=ChoiJangHun" target="_blank">-->
+        									<!--		<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">-->
+        									<!--			<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRmCl2k5yWbcP_Aq2XUPZUyxARXYXHyJqRrB_VXHVlOknJHtNnb" class="ll-service-image" height="150px">-->
+        									<!--			<h3>최장훈</h3>-->
+        									<!--			<p>2015년 대학원 총학생회장</p>-->
+        									<!--			<span>고공농성에서 투신소동까지. 그의 이야기</span>-->
+        									<!--			<a href="/people/info?char_name=ChoiJangHun" target="_blank">바로가기</a>-->
+        									<!--		</div>-->
+        									<!--	</a>-->
+        									<!--</div>-->
+        									<!--<div class="col-md-3 col-sm-6 ll-service-pd" height="347px;">-->
+        									<!--	<a href="http://togedule.com" target="_blank">-->
+        									<!--		<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">-->
+        									<!--			<img src="images/services/togedule.jpg" class="ll-service-image">-->
+        									<!--			<h3>투게쥴</h3>-->
+        									<!--			<p>여럿이 시간 약속 잡을 때는?</p>-->
+        									<!--			<span>친구끼리 비는 시간 찾아서 약속시간 후보 알려주기 </span>-->
+        									<!--			<a href="http://togedule.com" traget="_blank">http://togedule.com</a>-->
+        									<!--		</div>-->
+        									<!--	</a>-->
+        									<!--</div>-->
+        									<!--<div class="col-md-3 col-sm-6 ll-service-pd" height="347px;">-->
+        									<!--	<a href="http://jikbakguri.com" target="_blank">-->
+        									<!--		<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">-->
+        									<!--			<img src="images/services/avsearch.jpg" class="ll-service-image">-->
+        									<!--			<h3>직박구리</h3>-->
+        									<!--			<p>건국이래 가장 야동 잘 찾아주는 사이트</p>-->
+        									<!--			<span>야동 평가/추천 서비스 평균 하루 방문자 n만</span>-->
+        									<!--			<a href="http://jikbakguri.com" target="_blank">http://jikbakguri.com</a>-->
+        									<!--		</div>-->
+        									<!--	</a>-->
+        									<!--</div>-->
+        						<!--/임시폐쇄구간-->
         								</div>
         							</div>
         						</div>
@@ -450,356 +451,358 @@
         							</div>
         						</div>
         						<% end %>
+        						<!--임시폐쇄구간-->
         						<!--일일모집-->
-        						<div class="ll-sponser-smHeader">일일 참가자 모집</div>
-        						<div class="ll-sponser-smWrapper">
+        						<!--<div class="ll-sponser-smHeader">일일 참가자 모집</div>-->
+        						<!--<div class="ll-sponser-smWrapper">-->
         							<!--주간상주DB-->
-        							<div class="ll-sponser-item is-sm">
-        								<div class="c-image">
-        									<a href="/" target="_blank">
-        										<img src="images/sponsers/pellue.png" alt="주간지킴이 모집">
-        									</a>
-        								</div>
-        								<div class="c-desc">
-        									<a href="/" target="_blank" class="c-desc-link">주간지킴이 모집</a>
-        									<span>[날짜]천막 주간 지킴이를 모집합니다!(시간: 09~18시 사이 자율)</span>
-        								</div>
-        							</div>
+        						<!--	<div class="ll-sponser-item is-sm">-->
+        						<!--		<div class="c-image">-->
+        						<!--			<a href="/" target="_blank">-->
+        						<!--				<img src="images/sponsers/pellue.png" alt="주간지킴이 모집">-->
+        						<!--			</a>-->
+        						<!--		</div>-->
+        						<!--		<div class="c-desc">-->
+        						<!--			<a href="/" target="_blank" class="c-desc-link">주간지킴이 모집</a>-->
+        						<!--			<span>[날짜]천막 주간 지킴이를 모집합니다!(시간: 09~18시 사이 자율)</span>-->
+        						<!--		</div>-->
+        						<!--	</div>-->
         							<!--/-->
         							<!--야간상주DB-->
-        							<div class="ll-sponser-item is-sm">
-        								<div class="c-image">
-        									<a href="/" target="_blank">
-        										<img src="images/sponsers/tc.png" alt="야간지킴이 모집">
-        									</a>
-        								</div>
-        								<div class="c-desc">
-        									<a href="/" target="_blank" class="c-desc-link">야간지킴이 모집</a>
-        									<span>[날짜]천막 야간 지킴이를 모집합니다!(시간: 18~24시 사이 자율)</span>
-        								</div>
-        							</div>
+        						<!--	<div class="ll-sponser-item is-sm">-->
+        						<!--		<div class="c-image">-->
+        						<!--			<a href="/" target="_blank">-->
+        						<!--				<img src="images/sponsers/tc.png" alt="야간지킴이 모집">-->
+        						<!--			</a>-->
+        						<!--		</div>-->
+        						<!--		<div class="c-desc">-->
+        						<!--			<a href="/" target="_blank" class="c-desc-link">야간지킴이 모집</a>-->
+        						<!--			<span>[날짜]천막 야간 지킴이를 모집합니다!(시간: 18~24시 사이 자율)</span>-->
+        						<!--		</div>-->
+        						<!--	</div>-->
         							
         							<!--아침피켓팅DB-->
-        							<div class="ll-sponser-item is-sm">
-        								<div class="c-image">
-        									<a href="/" target="_blank">
-        										<img src="images/sponsers/js.png" alt="아침피켓터 모집">
-        									</a>
-        								</div>
-        								<div class="c-desc">
-        									<a href="/" target="_blank" class="c-desc-link">아침피켓터 모집</a>
-        									<span>[날짜]아침에 피켓팅하실분?(시간:08:30~09:30)</span>
-        								</div>
-        							</div>
+        						<!--	<div class="ll-sponser-item is-sm">-->
+        						<!--		<div class="c-image">-->
+        						<!--			<a href="/" target="_blank">-->
+        						<!--				<img src="images/sponsers/js.png" alt="아침피켓터 모집">-->
+        						<!--			</a>-->
+        						<!--		</div>-->
+        						<!--		<div class="c-desc">-->
+        						<!--			<a href="/" target="_blank" class="c-desc-link">아침피켓터 모집</a>-->
+        						<!--			<span>[날짜]아침에 피켓팅하실분?(시간:08:30~09:30)</span>-->
+        						<!--		</div>-->
+        						<!--	</div>-->
         							<!--점심피켓팅DB-->
-        							<div class="ll-sponser-item is-sm">
-        								<div class="c-image">
-        									<a href="/" target="_blank">
-        										<img src="images/sponsers/bc.png" alt="점심피켓터 모집">
-        									</a>
-        								</div>
-        								<div class="c-desc">
-        									<a href="/" target="_blank" class="c-desc-link">점심피켓터 모집</a>
-        									<span>[날짜]점심에 피켓팅하실분?(시간:11:30~12:30)</span>
-        								</div>
-        							</div>
+        						<!--	<div class="ll-sponser-item is-sm">-->
+        						<!--		<div class="c-image">-->
+        						<!--			<a href="/" target="_blank">-->
+        						<!--				<img src="images/sponsers/bc.png" alt="점심피켓터 모집">-->
+        						<!--			</a>-->
+        						<!--		</div>-->
+        						<!--		<div class="c-desc">-->
+        						<!--			<a href="/" target="_blank" class="c-desc-link">점심피켓터 모집</a>-->
+        						<!--			<span>[날짜]점심에 피켓팅하실분?(시간:11:30~12:30)</span>-->
+        						<!--		</div>-->
+        						<!--	</div>-->
         							
         							<!--팀원모집DB-->
-        							<div class="ll-sponser-item is-sm">
-        								<div class="c-image">
-        									<a href="/" target="_blank">
-        										<img src="images/sponsers/bp.png" alt="정식 팀원 모집">
-        									</a>
-        								</div>
-        								<div class="c-desc">
-        									<a href="/" target="_blank" class="c-desc-link">정식 팀원 모집</a>
-        									<span>미동추<br/>로 함께하고싶은 사람 누구나.</span>
-        								</div>
-        							</div>
-        						</div>
+        						<!--	<div class="ll-sponser-item is-sm">-->
+        						<!--		<div class="c-image">-->
+        						<!--			<a href="/" target="_blank">-->
+        						<!--				<img src="images/sponsers/bp.png" alt="정식 팀원 모집">-->
+        						<!--			</a>-->
+        						<!--		</div>-->
+        						<!--		<div class="c-desc">-->
+        						<!--			<a href="/" target="_blank" class="c-desc-link">정식 팀원 모집</a>-->
+        						<!--			<span>미동추<br/>로 함께하고싶은 사람 누구나.</span>-->
+        						<!--		</div>-->
+        						<!--	</div>-->
+        						<!--</div>-->
         						<!--/일일모집끝.-->
         						<!--재능모집-->
-        						<div class="ll-sponser-smHeader">재능 모집</div>
-        						<div class="ll-sponser-smWrapper">
+        						<!--<div class="ll-sponser-smHeader">재능 모집</div>-->
+        						<!--<div class="ll-sponser-smWrapper">-->
         							<!--for 마지막 5개-->
-        							<div class="ll-sponser-item is-sm">
-        								<div class="c-image">
-        									<a>
-        										<img src="재능.이미지" alt="모집제목">
-        									</a>
-        								</div>
-        								<div class="c-desc">
-        									<a class="c-desc-link">모집제목</a>
-        									<span>날짜, 시간, 참가현황</span>
-        								</div>
-        							</div>
+        						<!--	<div class="ll-sponser-item is-sm">-->
+        						<!--		<div class="c-image">-->
+        						<!--			<a>-->
+        						<!--				<img src="재능.이미지" alt="모집제목">-->
+        						<!--			</a>-->
+        						<!--		</div>-->
+        						<!--		<div class="c-desc">-->
+        						<!--			<a class="c-desc-link">모집제목</a>-->
+        						<!--			<span>날짜, 시간, 참가현황</span>-->
+        						<!--		</div>-->
+        						<!--	</div>-->
         							<!--/-->
-        							<div class="ll-sponser-item is-sm">
-        								<div class="c-image">
-        									<a>
-        										<img src="재능.이미지" alt="모집제목">
-        									</a>
-        								</div>
-        								<div class="c-desc">
-        									<a class="c-desc-link">모집제목</a>
-        									<span>날짜, 시간, 참가현황</span>
-        								</div>
-        							</div>
-        							<div class="ll-sponser-item is-sm">
-        								<div class="c-image">
-        									<a>
-        										<img src="재능.이미지" alt="모집제목">
-        									</a>
-        								</div>
-        								<div class="c-desc">
-        									<a class="c-desc-link">모집제목</a>
-        									<span>날짜, 시간, 참가현황</span>
-        								</div>
-        							</div>
-        							<div class="ll-sponser-item is-sm">
-        								<div class="c-image">
-        									<a>
-        										<img src="재능.이미지" alt="모집제목">
-        									</a>
-        								</div>
-        								<div class="c-desc">
-        									<a class="c-desc-link">모집제목</a>
-        									<span>날짜, 시간, 참가현황</span>
-        								</div>
-        							</div>
-        							<div class="ll-sponser-item is-sm">
-        								<div class="c-image">
-        									<a>
-        										<img src="재능.이미지" alt="모집제목">
-        									</a>
-        								</div>
-        								<div class="c-desc">
-        									<a class="c-desc-link">모집제목</a>
-        									<span>날짜, 시간, 참가현황</span>
-        								</div>
-        							</div>
-        						</div>
+        						<!--	<div class="ll-sponser-item is-sm">-->
+        						<!--		<div class="c-image">-->
+        						<!--			<a>-->
+        						<!--				<img src="재능.이미지" alt="모집제목">-->
+        						<!--			</a>-->
+        						<!--		</div>-->
+        						<!--		<div class="c-desc">-->
+        						<!--			<a class="c-desc-link">모집제목</a>-->
+        						<!--			<span>날짜, 시간, 참가현황</span>-->
+        						<!--		</div>-->
+        						<!--	</div>-->
+        						<!--	<div class="ll-sponser-item is-sm">-->
+        						<!--		<div class="c-image">-->
+        						<!--			<a>-->
+        						<!--				<img src="재능.이미지" alt="모집제목">-->
+        						<!--			</a>-->
+        						<!--		</div>-->
+        						<!--		<div class="c-desc">-->
+        						<!--			<a class="c-desc-link">모집제목</a>-->
+        						<!--			<span>날짜, 시간, 참가현황</span>-->
+        						<!--		</div>-->
+        						<!--	</div>-->
+        						<!--	<div class="ll-sponser-item is-sm">-->
+        						<!--		<div class="c-image">-->
+        						<!--			<a>-->
+        						<!--				<img src="재능.이미지" alt="모집제목">-->
+        						<!--			</a>-->
+        						<!--		</div>-->
+        						<!--		<div class="c-desc">-->
+        						<!--			<a class="c-desc-link">모집제목</a>-->
+        						<!--			<span>날짜, 시간, 참가현황</span>-->
+        						<!--		</div>-->
+        						<!--	</div>-->
+        						<!--	<div class="ll-sponser-item is-sm">-->
+        						<!--		<div class="c-image">-->
+        						<!--			<a>-->
+        						<!--				<img src="재능.이미지" alt="모집제목">-->
+        						<!--			</a>-->
+        						<!--		</div>-->
+        						<!--		<div class="c-desc">-->
+        						<!--			<a class="c-desc-link">모집제목</a>-->
+        						<!--			<span>날짜, 시간, 참가현황</span>-->
+        						<!--		</div>-->
+        						<!--	</div>-->
+        						<!--</div>-->
         						<!--/재능모집끝.-->
+        						<!--/임시폐쇄구간-->
         					</div>
         				</div><!-- #portfolio end -->
         			</div>
-        
-        			<div id="section-review" class="page-section notoppadding ll-review">
-        				<div class="section nomargin ll-section-image" style="background-image: url('images/bg/super_big_massage.png'); background-size: cover; background-position: center center;">
-        				    <center style="margin-top: 30px;"><span class="li-font-bold" style="color:white;font-size: 60px;" align="center">IDEAS</span></center>
-        				</div>
-        				<div class="ll-sponser-smHeader">
-        				    <img src="images/bg/more_befor_ideas.jpg" style="">
-        				    <a href="/scdl/info">CLICK<em>!</em></a>
-        				</div>
-        				<div class="ll-review-content">
-        					<div class="container clearfix">
-        						<div class="nobottommargin">
-        							<div class="fslider testimonial testimonial-full nobgcolor noborder noshadow nopadding" data-arrows="false">
-        								<div class="flexslider">
-        									<div class="slider-wrap">
+                    <!--임시폐쇄구간-->
+        			<!--<div id="section-review" class="page-section notoppadding ll-review">-->
+        			<!--	<div class="section nomargin ll-section-image" style="background-image: url('images/bg/super_big_massage.png'); background-size: cover; background-position: center center;">-->
+        			<!--	    <center style="margin-top: 30px;"><span class="li-font-bold" style="color:white;font-size: 60px;" align="center">IDEAS</span></center>-->
+        			<!--	</div>-->
+        			<!--	<div class="ll-sponser-smHeader">-->
+        			<!--	    <img src="images/bg/more_befor_ideas.jpg" style="">-->
+        			<!--	    <a href="/scdl/info">CLICK<em>!</em></a>-->
+        			<!--	</div>-->
+        			<!--	<div class="ll-review-content">-->
+        			<!--		<div class="container clearfix">-->
+        			<!--			<div class="nobottommargin">-->
+        			<!--				<div class="fslider testimonial testimonial-full nobgcolor noborder noshadow nopadding" data-arrows="false">-->
+        			<!--					<div class="flexslider">-->
+        			<!--						<div class="slider-wrap">-->
         									    <!--for 5times-->
-        										<div class="slide">
-        											<div>
-        												<div class="c-profile">
-        													<img src="images/about/iconmonstr-cloud-25-icon-256.png">
-        												</div>
-        												<p class="c-content">
-        													아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 
-        													아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 
-        													아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. <br/>
-        													아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. !!!
-        												</p>
-        												<div class="c-student">
-        													발제자 이름(익명여부)
-        													<span>소속 학과(공개여부)</span>
-        												</div>
-        											</div>
-        										</div>
+        			<!--							<div class="slide">-->
+        			<!--								<div>-->
+        			<!--									<div class="c-profile">-->
+        			<!--										<img src="images/about/iconmonstr-cloud-25-icon-256.png">-->
+        			<!--									</div>-->
+        			<!--									<p class="c-content">-->
+        			<!--										아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. -->
+        			<!--										아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. -->
+        			<!--										아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. <br/>-->
+        			<!--										아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. !!!-->
+        			<!--									</p>-->
+        			<!--									<div class="c-student">-->
+        			<!--										발제자 이름(익명여부)-->
+        			<!--										<span>소속 학과(공개여부)</span>-->
+        			<!--									</div>-->
+        			<!--								</div>-->
+        			<!--							</div>-->
         										<!--/-->
-        										<div class="slide">
-        											<div>
-        												<div class="c-profile">
-        													<img src="images/about/iconmonstr-cloud-25-icon-256.png">
-        												</div>
-        												<p class="c-content">
-        													아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 
-        													아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 
-        													아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. <br/>
-        													아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. !!!
-        												</p>
-        												<div class="c-student">
-        													발제자 이름(익명여부)
-        													<span>소속 학과(공개여부)</span>
-        												</div>
-        											</div>
-        										</div>
-        										<div class="slide">
-        											<div>
-        												<div class="c-profile">
-        													<img src="images/about/iconmonstr-cloud-25-icon-256.png">
-        												</div>
-        												<p class="c-content">
-        													아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 
-        													아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 
-        													아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. <br/>
-        													아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. !!!
-        												</p>
-        												<div class="c-student">
-        													발제자 이름(익명여부)
-        													<span>소속 학과(공개여부)</span>
-        												</div>
-        											</div>
-        										</div>
-        										<div class="slide">
-        											<div>
-        												<div class="c-profile">
-        													<img src="images/about/iconmonstr-cloud-25-icon-256.png">
-        												</div>
-        												<p class="c-content">
-        													아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 
-        													아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 
-        													아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. <br/>
-        													아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. !!!
-        												</p>
-        												<div class="c-student">
-        													발제자 이름(익명여부)
-        													<span>소속 학과(공개여부)</span>
-        												</div>
-        											</div>
-        										</div>
-        										<div class="slide">
-        											<div>
-        												<div class="c-profile">
-        													<img src="images/about/iconmonstr-cloud-25-icon-256.png">
-        												</div>
-        												<p class="c-content">
-        													아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 
-        													아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 
-        													아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. <br/>
-        													아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. !!!
-        												</p>
-        												<div class="c-student">
-        													발제자 이름(익명여부)
-        													<span>소속 학과(공개여부)</span>
-        												</div>
-        											</div>
-        										</div>
-        									</div>
-        								</div>
-        							</div>
-        						</div>
-        					</div>
-        				</div>
-        			</div>
+        			<!--							<div class="slide">-->
+        			<!--								<div>-->
+        			<!--									<div class="c-profile">-->
+        			<!--										<img src="images/about/iconmonstr-cloud-25-icon-256.png">-->
+        			<!--									</div>-->
+        			<!--									<p class="c-content">-->
+        			<!--										아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. -->
+        			<!--										아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. -->
+        			<!--										아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. <br/>-->
+        			<!--										아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. !!!-->
+        			<!--									</p>-->
+        			<!--									<div class="c-student">-->
+        			<!--										발제자 이름(익명여부)-->
+        			<!--										<span>소속 학과(공개여부)</span>-->
+        			<!--									</div>-->
+        			<!--								</div>-->
+        			<!--							</div>-->
+        			<!--							<div class="slide">-->
+        			<!--								<div>-->
+        			<!--									<div class="c-profile">-->
+        			<!--										<img src="images/about/iconmonstr-cloud-25-icon-256.png">-->
+        			<!--									</div>-->
+        			<!--									<p class="c-content">-->
+        			<!--										아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. -->
+        			<!--										아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. -->
+        			<!--										아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. <br/>-->
+        			<!--										아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. !!!-->
+        			<!--									</p>-->
+        			<!--									<div class="c-student">-->
+        			<!--										발제자 이름(익명여부)-->
+        			<!--										<span>소속 학과(공개여부)</span>-->
+        			<!--									</div>-->
+        			<!--								</div>-->
+        			<!--							</div>-->
+        			<!--							<div class="slide">-->
+        			<!--								<div>-->
+        			<!--									<div class="c-profile">-->
+        			<!--										<img src="images/about/iconmonstr-cloud-25-icon-256.png">-->
+        			<!--									</div>-->
+        			<!--									<p class="c-content">-->
+        			<!--										아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. -->
+        			<!--										아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. -->
+        			<!--										아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. <br/>-->
+        			<!--										아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. !!!-->
+        			<!--									</p>-->
+        			<!--									<div class="c-student">-->
+        			<!--										발제자 이름(익명여부)-->
+        			<!--										<span>소속 학과(공개여부)</span>-->
+        			<!--									</div>-->
+        			<!--								</div>-->
+        			<!--							</div>-->
+        			<!--							<div class="slide">-->
+        			<!--								<div>-->
+        			<!--									<div class="c-profile">-->
+        			<!--										<img src="images/about/iconmonstr-cloud-25-icon-256.png">-->
+        			<!--									</div>-->
+        			<!--									<p class="c-content">-->
+        			<!--										아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. -->
+        			<!--										아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. -->
+        			<!--										아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. <br/>-->
+        			<!--										아이디어 내용. 아이디어 내용. 아이디어 내용. 아이디어 내용. !!!-->
+        			<!--									</p>-->
+        			<!--									<div class="c-student">-->
+        			<!--										발제자 이름(익명여부)-->
+        			<!--										<span>소속 학과(공개여부)</span>-->
+        			<!--									</div>-->
+        			<!--								</div>-->
+        			<!--							</div>-->
+        			<!--						</div>-->
+        			<!--					</div>-->
+        			<!--				</div>-->
+        			<!--			</div>-->
+        			<!--		</div>-->
+        			<!--	</div>-->
+        			<!--</div>-->
         
-        			<div id="section-services" class="page-section notoppadding">
-        				<div class="section nomargin ll-section-image" style="background-image: url('images/bg/interview.png'); background-size: cover; background-position: center center;">
-        				    <center style="margin-top: 30px;"><span class="li-font-bold" style="color:white;font-size: 60px;" align="center">자유게시판</span></center>
-        				</div>
-        				<div class="ll-sponser-smHeader">
-        				    <img src="images/bg/more_befor_talks.jpg" style="">
-        				    <a href="/agora/info">CLICK<em>!</em></a>
-        				</div>
-        				<div class="container">
-        					<div class="common-height clearfix">
-        						<div class="col-md-12">
-        							<div class="ll-service-wrapper">
-        								<div class="row common-height grid-border clearfix">
-        									<div class="col-md-3 col-sm-6 ll-service-pd">
-        										<a href="http://codestudy.kr" target="_blank">
-        											<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
-        												<img src="images/services/codestudy.jpg" class="ll-service-image">
-        												<h3>코드스터디</h3>
-        												<p>온라인 프로그래밍 교육</p>
-        												<span>한국 인터넷 진흥원 KISA와 공동프로젝트 진행</span>
-        												<a href="http://codestudy.kr" target="_blank">http://codestudy.kr</a>
-        											</div>
-        										</a>
-        									</div>
-        									<div class="col-md-3 col-sm-6 ll-service-pd">
-        										<a href="http://codelion.net" target="_blank">
-        											<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
-        												<img src="images/services/codelion.jpg" class="ll-service-image">
-        												<h3>코드라이언</h3>
-        												<p>온라인 프로그래밍 교육</p>
-        												<span>한국인터넷진흥원 KISA와 공동프로젝트 진행 NIPA 캠퍼스CEO 프로그램 선정 약 3천 여명이 수강</span>
-        												<a href="http://codelion.net" target="_blank">http://codelion.net</a>
-        											</div>
-        										</a>
-        									</div>
-        									<div class="col-md-3 col-sm-6 ll-service-pd">
-        										<a href="#" target="_blank">
-        											<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
-        												<img src="images/services/nowarning.jpg" class="ll-service-image">
-        												<h3>NOWARNING</h3>
-        												<p>PROXY 속도 비교</p>
-        												<a href="http://nowarning.or.kr">http://nowarning.or.kr</a>
-        											</div>
-        										</a>
-        									</div>
-        									<div class="col-md-3 col-sm-6 ll-service-pd">
-        										<a href="http://bepro11.com" target="_blank">
-        											<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
-        												<img src="images/services/bepro11.jpg" class="ll-service-image">
-        												<h3>BePro11</h3>
-        												<p>축구 기록 관리 시스템</p>
-        												<span>아마추어 축구 리그 및 기록 관리 시스템 법인 설립, 벤처기업 인증, 시드 펀딩 완료</span>
-        												<a href="http://bepro11.com" target="_blank">http://bepro11.com</a>
-        											</div>
-        										</a>
-        									</div>
-        									<div class="col-md-3 col-sm-6 ll-service-pd">
-        										<a target="_blank">
-        											<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
-        												<img src="images/services/votepeople.jpg" class="ll-service-image">
-        												<h3>보트피플</h3>
-        												<p>서울대 총학 온라인 투표</p>
-        												<span>서울대 총학 투표 및 10여개 주요 학내 투표 진행 서울대 최초의 학생 온라인 투표</span>
-        												<a>http://vote.snu.ac.kr</a>
-        											</div>
-        										</a>
-        									</div>
-        									<div class="col-md-3 col-sm-6 ll-service-pd">
-        										<a href="http://jasoseol.com" target="_blank">
-        											<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
-        												<img src="images/services/jasoseol.jpg" class="ll-service-image">
-        												<h3>자소설닷컴</h3>
-        												<p>자기소개서 토탈솔루션</p>
-        												<span>19만개 이상의 자기소개서 보유. 시드 펀딩 완료.</span>
-        												<a href="http://jasoseol.com" target="_blank">http://jasoseol.com</a>
-        											</div>
-        										</a>
-        									</div>
-        									<div class="col-md-3 col-sm-6 ll-service-pd">
-        										<a href="http://togedule.com" target="_blank">
-        											<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
-        												<img src="images/services/togedule.jpg" class="ll-service-image">
-        												<h3>투게쥴</h3>
-        												<p>여럿이 시간 약속 잡을 때는?</p>
-        												<span>친구끼리 비는 시간 찾아서 약속시간 후보 알려주기 </span>
-        												<a href="http://togedule.com" traget="_blank">http://togedule.com</a>
-        											</div>
-        										</a>
-        									</div>
-        									<div class="col-md-3 col-sm-6 ll-service-pd">
-        										<a href="http://jikbakguri.com" target="_blank">
-        											<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
-        												<img src="images/services/avsearch.jpg" class="ll-service-image">
-        												<h3>직박구리</h3>
-        												<p>건국이래 가장 야동 잘 찾아주는 사이트</p>
-        												<span>야동 평가/추천 서비스 평균 하루 방문자 n만</span>
-        												<a href="http://jikbakguri.com" target="_blank">http://jikbakguri.com</a>
-        											</div>
-        										</a>
-        									</div>
-        								</div>
-        							</div>
-        						</div>
-        					</div>
-        				</div>
-        			</div>
-        
+        			<!--<div id="section-services" class="page-section notoppadding">-->
+        			<!--	<div class="section nomargin ll-section-image" style="background-image: url('images/bg/interview.png'); background-size: cover; background-position: center center;">-->
+        			<!--	    <center style="margin-top: 30px;"><span class="li-font-bold" style="color:white;font-size: 60px;" align="center">자유게시판</span></center>-->
+        			<!--	</div>-->
+        			<!--	<div class="ll-sponser-smHeader">-->
+        			<!--	    <img src="images/bg/more_befor_talks.jpg" style="">-->
+        			<!--	    <a href="/agora/info">CLICK<em>!</em></a>-->
+        			<!--	</div>-->
+        			<!--	<div class="container">-->
+        			<!--		<div class="common-height clearfix">-->
+        			<!--			<div class="col-md-12">-->
+        			<!--				<div class="ll-service-wrapper">-->
+        			<!--					<div class="row common-height grid-border clearfix">-->
+        			<!--						<div class="col-md-3 col-sm-6 ll-service-pd">-->
+        			<!--							<a href="http://codestudy.kr" target="_blank">-->
+        			<!--								<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">-->
+        			<!--									<img src="images/services/codestudy.jpg" class="ll-service-image">-->
+        			<!--									<h3>코드스터디</h3>-->
+        			<!--									<p>온라인 프로그래밍 교육</p>-->
+        			<!--									<span>한국 인터넷 진흥원 KISA와 공동프로젝트 진행</span>-->
+        			<!--									<a href="http://codestudy.kr" target="_blank">http://codestudy.kr</a>-->
+        			<!--								</div>-->
+        			<!--							</a>-->
+        			<!--						</div>-->
+        			<!--						<div class="col-md-3 col-sm-6 ll-service-pd">-->
+        			<!--							<a href="http://codelion.net" target="_blank">-->
+        			<!--								<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">-->
+        			<!--									<img src="images/services/codelion.jpg" class="ll-service-image">-->
+        			<!--									<h3>코드라이언</h3>-->
+        			<!--									<p>온라인 프로그래밍 교육</p>-->
+        			<!--									<span>한국인터넷진흥원 KISA와 공동프로젝트 진행 NIPA 캠퍼스CEO 프로그램 선정 약 3천 여명이 수강</span>-->
+        			<!--									<a href="http://codelion.net" target="_blank">http://codelion.net</a>-->
+        			<!--								</div>-->
+        			<!--							</a>-->
+        			<!--						</div>-->
+        			<!--						<div class="col-md-3 col-sm-6 ll-service-pd">-->
+        			<!--							<a href="#" target="_blank">-->
+        			<!--								<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">-->
+        			<!--									<img src="images/services/nowarning.jpg" class="ll-service-image">-->
+        			<!--									<h3>NOWARNING</h3>-->
+        			<!--									<p>PROXY 속도 비교</p>-->
+        			<!--									<a href="http://nowarning.or.kr">http://nowarning.or.kr</a>-->
+        			<!--								</div>-->
+        			<!--							</a>-->
+        			<!--						</div>-->
+        			<!--						<div class="col-md-3 col-sm-6 ll-service-pd">-->
+        			<!--							<a href="http://bepro11.com" target="_blank">-->
+        			<!--								<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">-->
+        			<!--									<img src="images/services/bepro11.jpg" class="ll-service-image">-->
+        			<!--									<h3>BePro11</h3>-->
+        			<!--									<p>축구 기록 관리 시스템</p>-->
+        			<!--									<span>아마추어 축구 리그 및 기록 관리 시스템 법인 설립, 벤처기업 인증, 시드 펀딩 완료</span>-->
+        			<!--									<a href="http://bepro11.com" target="_blank">http://bepro11.com</a>-->
+        			<!--								</div>-->
+        			<!--							</a>-->
+        			<!--						</div>-->
+        			<!--						<div class="col-md-3 col-sm-6 ll-service-pd">-->
+        			<!--							<a target="_blank">-->
+        			<!--								<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">-->
+        			<!--									<img src="images/services/votepeople.jpg" class="ll-service-image">-->
+        			<!--									<h3>보트피플</h3>-->
+        			<!--									<p>서울대 총학 온라인 투표</p>-->
+        			<!--									<span>서울대 총학 투표 및 10여개 주요 학내 투표 진행 서울대 최초의 학생 온라인 투표</span>-->
+        			<!--									<a>http://vote.snu.ac.kr</a>-->
+        			<!--								</div>-->
+        			<!--							</a>-->
+        			<!--						</div>-->
+        			<!--						<div class="col-md-3 col-sm-6 ll-service-pd">-->
+        			<!--							<a href="http://jasoseol.com" target="_blank">-->
+        			<!--								<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">-->
+        			<!--									<img src="images/services/jasoseol.jpg" class="ll-service-image">-->
+        			<!--									<h3>자소설닷컴</h3>-->
+        			<!--									<p>자기소개서 토탈솔루션</p>-->
+        			<!--									<span>19만개 이상의 자기소개서 보유. 시드 펀딩 완료.</span>-->
+        			<!--									<a href="http://jasoseol.com" target="_blank">http://jasoseol.com</a>-->
+        			<!--								</div>-->
+        			<!--							</a>-->
+        			<!--						</div>-->
+        			<!--						<div class="col-md-3 col-sm-6 ll-service-pd">-->
+        			<!--							<a href="http://togedule.com" target="_blank">-->
+        			<!--								<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">-->
+        			<!--									<img src="images/services/togedule.jpg" class="ll-service-image">-->
+        			<!--									<h3>투게쥴</h3>-->
+        			<!--									<p>여럿이 시간 약속 잡을 때는?</p>-->
+        			<!--									<span>친구끼리 비는 시간 찾아서 약속시간 후보 알려주기 </span>-->
+        			<!--									<a href="http://togedule.com" traget="_blank">http://togedule.com</a>-->
+        			<!--								</div>-->
+        			<!--							</a>-->
+        			<!--						</div>-->
+        			<!--						<div class="col-md-3 col-sm-6 ll-service-pd">-->
+        			<!--							<a href="http://jikbakguri.com" target="_blank">-->
+        			<!--								<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">-->
+        			<!--									<img src="images/services/avsearch.jpg" class="ll-service-image">-->
+        			<!--									<h3>직박구리</h3>-->
+        			<!--									<p>건국이래 가장 야동 잘 찾아주는 사이트</p>-->
+        			<!--									<span>야동 평가/추천 서비스 평균 하루 방문자 n만</span>-->
+        			<!--									<a href="http://jikbakguri.com" target="_blank">http://jikbakguri.com</a>-->
+        			<!--								</div>-->
+        			<!--							</a>-->
+        			<!--						</div>-->
+        			<!--					</div>-->
+        			<!--				</div>-->
+        			<!--			</div>-->
+        			<!--		</div>-->
+        			<!--	</div>-->
+        			<!--</div>-->
+                    <!--/임시폐쇄구간-->
         			<div id="section-operator" class="page-section notoppadding ll-review">
         				<div class="section nomargin ll-section-image" style="background-image: url('images/bg/big_message.png'); background-size: cover; background-position: center center;">
         				    <center style="margin-top: 30px;"><span class="li-font-bold" style="color:white;font-size: 60px;" align="center">응원메세지</span></center>
