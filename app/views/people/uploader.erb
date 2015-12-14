@@ -1,4 +1,4 @@
-<div class="col-md-12" style="padding:0%; width:100%; height:1300px;margin-top: -20px;">
+<div class="col-md-12" style="padding:0%; width:100%; height:100%;margin-top: -20px;">
     <div class="col-md-12" style="background-color:#fff; padding:15px 0px 15px 15px;position: fixed;z-index: 100; border-bottom: 1px solid #eeeeee;">
         <div id="logo" class="col-md-2">
             <a href="/" class="standard-logo" data-dark-logo="images/logo1.png">
@@ -19,14 +19,24 @@
     		</nav>
         </div>
     </div>
-        
+    <%
+        if params[:statue] == "init"
+            statue = "처음이시군요"
+        elsif params[:statue] == "modify"
+            statue = "처음 설정 고치기"
+        elsif params[:statue] == "regist" || params[:statue] == nil
+            statue = "새 글쓰기"
+        else
+            statue = "글 수정하기"
+        end
+    %>
     <div class="col-md-12" style="background-color:#fff; margin-top: 72px; padding:0px; z-index: 10; border-bottom: 1px solid #eeeeee;">
         <div class="col-md-12">
             <nav id="primary-menu" class="" style="text-align:center; width:100%;">
 				<ul class="nav one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="65" style="float:left; font-weight: bolder;width: 100%; font-size: 15px; text-align: center;padding: 0% 41% 0% 41%;">
 					<li style="position:relative; float: left;width: 100%;">
 					    <a class="black_font" href="#" style="padding: 17px 15px; border-bottom:2px solid blue;">
-					        <div>글쓰기</div></a>
+					        <div><%= statue %></div></a>
 					</li>
 				</ul>
 			</nav>
@@ -34,63 +44,186 @@
     </div>
     
     <div class="col-md-12" style="padding:0px; background-color:#eeeeee;">
-        <div class="col-md-12" style="padding:0px 31.5%;">
-            <form>
-                <!--만약 사용자에 대한 정보가 없으면-->
-                <div style="position: relative; width: 100%; height: 50px; margin-top: 30px; border-radius: 26px; background-color: #afb4b5;font-size: 23px; text-align: center; padding-top: 10px; font-family: serif; font-weight: bolder; color: #fff;">
-                    - 당신의 정보 - (최초 등록시 입력)
-                </div>
+        <div class="col-md-12" style="padding:0px 31.5%;margin-bottom: 60px;">
+            <form action="/people/save" enctype="multipart/form-data" method="POST" name="people_form" id="people_form">
+                <% if params[:statue] == "init" %>
+                    <div style="position: relative; width: 100%; height: 50px; margin-top: 30px; border-radius: 26px; background-color: #afb4b5;font-size: 23px; text-align: center; padding-top: 10px; font-family: serif; font-weight: bolder; color: #fff;">
+                        - 당신의 정보 - (최초 등록시만 입력)
+                    </div>
+                    <input type="hidden" name="make_date" value="<%= Date.parse(Time.zone.now.to_s) %>">
+                    <input type="hidden" name="statue" value="init">
+                    <input type="hidden" name="typee" value="init">
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 46px 14px 31px;">이름</span>
+                        <input type="text" name="name" value="" placeholder="이름" style="margin-top: 20px; height: 46px; width: 204px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 31px 14px 16px;">영문명</span>
+                        <input type="text" name="name_eng" value="" placeholder="영어이름(띄어쓰기X)" style="margin-top: 20px; height: 46px; width: 279px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
+                    <br>
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 46px 14px 31px;">전화</span>
+                        <input type="text" name="phone" value="" placeholder="연락처" style="margin-top: 20px; height: 46px; width: 204px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 31px 14px 16px;">이메일</span>
+                        <input type="text" name="email" value="" placeholder="이메일" style="margin-top: 20px; height: 46px; width: 279px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
+                    <br>
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 46px 14px 31px;">역할</span>
+                        <input type="text" name="your_title" value="" placeholder="당시의 역할(ex. 2015년 대학원 총학생회장)" style="margin-top: 20px; width: 584px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
+                    <br>
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 46px 14px 31px;">프사</span>
+                        <input type="text" name="profile_img" value="" placeholder="주소를 붙여넣으세요(사진을 오른쪽클릭하면 주소를 복사할수있어요!)" style="margin-bottom: 30px; margin-top: 20px; width: 584px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
+                    <br>
+                    
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 22px 14px 0px;">About You</span>-당신(진행자)에 대한 소개 입력 :길이 150자
+                        <textarea name="about_you" cols="30" rows="3" style="word-wrap: break-word; margin-bottom: 20px; margin-top: 5px; width: 700px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
+                        </textarea>
+                    <br>
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 25px 14px 0px;">To Others</span>-서른글자로 전하고 싶은 말 :길이 한두문장
+                        <input type="text" name="to_others" value="" style="margin-bottom: 20px; margin-top: 5px; width: 700px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
+                    <br>
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 40px 14px 0px;">Details</span> -위에서 미처 담지 못한 당신에 대한 설명을 자유롭게 써주세요.
+                        <textarea name="details" value="" cols="30" rows="3" style="margin-top: 5px; width: 700px; height: 95px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
+                        </textarea>
+                    <br>
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 8px 14px 8px;">게시판의 제목</span>
+                        <input type="text" name="main_title" value="" placeholder="전체의 제목(ex. 고공농성에서 투신소동까지. 그의 이야기)" style="margin-top: 20px; width: 578px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
+                    <br>
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 46px 14px 31px;">사진</span>
+                        <input type="text" name="main_img" value="" placeholder="주소를 붙여넣으세요(대문짝만한 사진이에요)" style="margin-bottom: 30px; margin-top: 20px; width: 584px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
+                    <br>
                 
-                    <input type="file" name="" value="" placeholder="" style="width: 49%;
-                                                                                        height: 200px;
-                                                                                        border: 1px solid red;
-                                                                                        border-radius: 5px;
-                                                                                        font-size: 20px;
-                                                                                        text-align: center;
-                                                                                        margin: 20px 0px 0px 0px;" onchange="javascript:document.getElementById('profile_img').value = this.value">
-                    <img src="" alt="이미지 미리보기" id="getimg" style="position: absolute; right: 31.5%; width: 18%; height: 200px; border: 1px solid red; border-radius: 5px; margin: -200px 0px 0px 0px;">
-                    <input type="hidden" id="profile_img" name="profile_img" onchange="javascript:document.getElementById('getimg').value = this.value">
-                <span style="font-size: 16px; font-weight: bold; padding: 14px 46px 14px 31px;">이름</span>
-                    <input type="text" name="name" value="" placeholder="이름" style="margin-top: 20px; height: 46px; width: 204px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
-                <span style="font-size: 16px; font-weight: bold; padding: 14px 31px 14px 16px;">영문명</span>
-                    <input type="text" name="name_eng" value="" placeholder="영어이름(띄어쓰기X)" style="margin-top: 20px; height: 46px; width: 279px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
-                <br>
-                <span style="font-size: 16px; font-weight: bold; padding: 14px 46px 14px 31px;">전화</span>
-                    <input type="text" name="phone" value="" placeholder="연락처" style="margin-top: 20px; height: 46px; width: 204px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
-                <span style="font-size: 16px; font-weight: bold; padding: 14px 31px 14px 16px;">이메일</span>
-                    <input type="text" name="email" value="" placeholder="이메일" style="margin-top: 20px; height: 46px; width: 279px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
-                <br>
+                <% elsif params[:statue] == "modify" %>
+                    <div style="position: relative; width: 100%; height: 50px; margin-top: 30px; border-radius: 26px; background-color: #afb4b5;font-size: 23px; text-align: center; padding-top: 10px; font-family: serif; font-weight: bolder; color: #fff;">
+                        - 당신의 정보 -
+                    </div>
+                    <input type="hidden" name="make_date" value="<%= Date.parse(Time.zone.now.to_s) %>">
+                    <input type="hidden" name="statue" value="modify">
+                    <input type="hidden" name="typee" value="init">
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 46px 14px 31px;">이름</span>
+                        <input type="text" name="name" value="" placeholder="이름" style="margin-top: 20px; height: 46px; width: 204px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 31px 14px 16px;">영문명</span>
+                        <input type="text" name="name_eng" value="" placeholder="영어이름(띄어쓰기X)" style="margin-top: 20px; height: 46px; width: 279px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
+                    <br>
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 46px 14px 31px;">전화</span>
+                        <input type="text" name="phone" value="" placeholder="연락처" style="margin-top: 20px; height: 46px; width: 204px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 31px 14px 16px;">이메일</span>
+                        <input type="text" name="email" value="" placeholder="이메일" style="margin-top: 20px; height: 46px; width: 279px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
+                    <br>
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 46px 14px 31px;">역할</span>
+                        <input type="text" name="your_title" value="" placeholder="당시의 역할(ex. 2015년 대학원 총학생회장)" style="margin-top: 20px; width: 584px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
+                    <br>
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 46px 14px 31px;">프사</span>
+                        <input type="text" name="profile_img" value="" placeholder="주소를 붙여넣으세요(사진을 오른쪽클릭하면 주소를 복사할수있어요!)" style="margin-bottom: 30px; margin-top: 20px; width: 584px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
+                    <br>
+                    
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 22px 14px 0px;">About You</span>-당신(진행자)에 대한 소개 입력 :길이 150자
+                        <textarea name="about_you" cols="30" rows="3" style="word-wrap: break-word; margin-bottom: 20px; margin-top: 5px; width: 700px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
+                        </textarea>
+                    <br>
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 25px 14px 0px;">To Others</span>-서른글자로 전하고 싶은 말 :길이 한두문장
+                        <input type="text" name="to_others" value="" style="margin-bottom: 20px; margin-top: 5px; width: 700px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
+                    <br>
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 40px 14px 0px;">Details</span> -위에서 미처 담지 못한 당신에 대한 설명을 자유롭게 써주세요.
+                        <textarea name="details" value="" cols="30" rows="3" style="margin-top: 5px; width: 700px; height: 95px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
+                        </textarea>
+                    <br>
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 8px 14px 8px;">게시판의 제목</span>
+                        <input type="text" name="main_title" value="" placeholder="전체의 제목(ex. 고공농성에서 투신소동까지. 그의 이야기)" style="margin-top: 20px; width: 578px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
+                    <br>
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 46px 14px 31px;">사진</span>
+                        <input type="text" name="main_img" value="" placeholder="주소를 붙여넣으세요(대문짝만한 사진이에요)" style="margin-bottom: 30px; margin-top: 20px; width: 584px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
+                    <br>
                 
-                <span style="font-size: 16px; font-weight: bold; padding: 14px 31px 14px 31px;">이메일</span>
-                    <input type="text" name="email" value="" placeholder="이메일" style="margin-top: 20px; width: 584px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
-                <br>
-                <span style="font-size: 16px; font-weight: bold; padding: 14px 46px 14px 31px;">역할</span>
-                    <input type="text" name="your_title" value="" placeholder="당시의 역할(ex. 2015년 대학원 총학생회장)" style="margin-bottom: 30px; margin-top: 20px; width: 584px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
-                <br>
+                <% elsif params[:statue] == "regist" || params[:statue] == nil %>
+                    <div style="position: relative; width: 100%; height: 50px; margin-top: 30px; border-radius: 26px; background-color: #afb4b5;font-size: 23px; text-align: center; padding-top: 10px; font-family: serif; font-weight: bolder; color: #fff;">
+                        - 게시글 작성 -
+                    </div>
+                    <input type="hidden" name="make_date" value="<%= Date.parse(Time.zone.now.to_s) %>">
+                    <input type="hidden" name="name_eng" value="<%= params[:char_name] %>">
+                    <input type="hidden" name="statue" value="regist">
+                    <input type="hidden" name="typee" value="object">
+                    <br>
+                    <br>
+                    <span style="font-size: 16px; padding: 14px 25px 14px 0px;">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        ## 이용방법 ##<br><br>
+                        홀수번째 부제는 굵은 글씨로 표현되며<br>[ex. "<span style="font-weight:800;">첫날부터 문제가 생겼다.</span>"]<br>
+                        짝수번째 부제는 $ 기호를 달아 가운데정렬됩니다.<br>[ex. "$ 문제는 이는 시작에 불과했다는 점이었다"]<br><br>
+                        중간에 제외하고 싶은 요소( N번째 사진/부제/내용 )는<br>입력을 하지 않고 건너뛰면 자동으로 제외되며<br>
+                        입력하지 않은 요소는 제외한채 입력된 요소의 순서대로 글이 보여집니다.<br>
+                        따라서 모두 채울 필요 없이 원하는 만큼 글을 작성한 뒤 제출하기 버튼을 누르면 됩니다.<br><br>
+                        #주의# 메인이미지/ 글 제목/ 1번째 부제 및 내용/ 1번째 내용사진은 반드시 넣어주세요.<br><br>
+                        #조언# 사진을 넣을때에는 해당 란에 "넣고 싶은 사진의 주소"를 붙여넣어주세요.<br>
+                        주소는 인터넷에 올라가 있는 사진을 마우스 우클릭하여 "주소 복사"한 뒤 붙여넣을 수 있습니다.
+                    </span>
+                    <br>
+                    <br>
+                    <br>
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 25px 14px 0px;">메인이미지(필수)</span>
+                        <input type="text" name="img1" value="" style="margin-bottom: 20px; margin-top: 5px; width: 700px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
+                    <br>
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 25px 14px 0px;">글 제목(필수)</span>
+                        <input type="text" name="title" value="" style="margin-bottom: 20px; margin-top: 5px; width: 700px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
+                    <br>
+                    <br>
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 25px 14px 0px;">1번째 부제(필수)</span>
+                        <input type="text" name="subtitle1" value="" style="margin-bottom: 20px; margin-top: 5px; width: 700px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
+                    <br>
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 40px 14px 0px;">1번째 내용(필수)</span>
+                        <textarea name="content1" value="" cols="30" rows="3" style="margin-top: 5px; width: 700px; height: 95px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
+                        </textarea>
+                    <br>
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 25px 14px 0px;">2번째 부제</span>
+                        <input type="text" name="subtitle2" value="" style="margin-bottom: 20px; margin-top: 5px; width: 700px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
+                    <br>
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 40px 14px 0px;">2번째 내용</span>
+                        <textarea name="content2" value="" cols="30" rows="3" style="margin-top: 5px; width: 700px; height: 95px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
+                        </textarea>
+                    <br>
+                    <% n=2 %>
+                    <% loop do %>
+                        <% break if n > 10 %>
+                            <span style="font-size: 16px; font-weight: bold; padding: 14px 25px 14px 0px;"><%= n-1 %>번째 내용 사진<%= "(필수)" if n == 2 %></span>
+                                <input type="text" name="img<%= n %>" value="" style="margin-bottom: 20px; margin-top: 5px; width: 700px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
+                            <br>
+                            <span style="font-size: 16px; font-weight: bold; padding: 14px 25px 14px 0px;"><%= n*2 - 1 %>번째 부제</span>
+                                <input type="text" name="subtitle<%= n*2-1 %>" value="" style="margin-bottom: 20px; margin-top: 5px; width: 700px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
+                            <br>
+                            <span style="font-size: 16px; font-weight: bold; padding: 14px 40px 14px 0px;"><%= n*2 - 1 %>번째 내용</span>
+                                <textarea name="content<%= n*2-1 %>" value="" cols="30" rows="3" style="margin-top: 5px; width: 700px; height: 95px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
+                                </textarea>
+                            <br>
+                            <span style="font-size: 16px; font-weight: bold; padding: 14px 25px 14px 0px;"><%= n*2 %>번째 부제</span>
+                                <input type="text" name="subtitle<%= n*2 %>" value="" style="margin-bottom: 20px; margin-top: 5px; width: 700px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
+                            <br>
+                            <span style="font-size: 16px; font-weight: bold; padding: 14px 40px 14px 0px;"><%= n*2 %>번째 내용</span>
+                                <textarea name="content<%= n*2 %>" value="" cols="30" rows="3" style="margin-top: 5px; width: 700px; height: 95px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
+                                </textarea>
+                            <br>
+                        <% n = n+1 %>
+                    <% end %>
+                <% end %>
+                <input class="register_input" type="submit" name="" value="작성이 완료되면 눌러주세요" placeholder="" style="background-color: #429AEC;
+                                                                                                                    border: inherit;
+                                                                                                                    width: 100%;
+                                                                                                                    margin: 0px;
+                                                                                                                    border-radius: 0px;
+                                                                                                                    float: left;
+                                                                                                                    position: fixed;
+                                                                                                                    left: 0px;
+                                                                                                                    bottom: 0px;
+                                                                                                                    color: #fff;
+                                                                                                                    font-size: 25px;
+                                                                                                                    font-weight: bolder;">
                 
-                <span style="font-size: 16px; font-weight: bold; padding: 14px 22px 14px 0px;">About You</span>-당신(진행자)에 대한 소개 입력 :길이 150자
-                    <textarea name="about_you" cols="30" rows="3" style="word-wrap: break-word; margin-bottom: 20px; margin-top: 5px; width: 700px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
-                    </textarea>
-                <br>
-                <span style="font-size: 16px; font-weight: bold; padding: 14px 25px 14px 0px;">To Others</span>-서른글자로 전하고 싶은 말 :길이 한두문장
-                    <input type="text" name="to_others" value="" style="margin-bottom: 20px; margin-top: 5px; width: 700px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
-                <br>
-                <span style="font-size: 16px; font-weight: bold; padding: 14px 40px 14px 0px;">Details</span> -위에서 미처 담지 못한 말을 자유롭게 써주세요.
-                    <textarea name="details" value="" cols="30" rows="3" style="margin-top: 5px; width: 700px; height: 95px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
-                    </textarea>
-                
-                <div style="position: relative; width: 100%; height: 50px; margin-top: 30px; border-radius: 26px; background-color: #afb4b5;font-size: 23px; text-align: center; padding-top: 10px; font-family: serif; font-weight: bolder; color: #fff;">
-                    - 당신 채널의 정보 - (최초 등록시 입력)
-                </div>
-                <input type="text" name="" value="" placeholder="" style="">
-                <input type="text" name="" value="" placeholder="" style="">
-                <!--/-->
-                
-                
-                <div style="position: relative; width: 100%; height: 50px; margin-top: 30px; border-radius: 26px; background-color: #afb4b5;font-size: 23px; text-align: center; padding-top: 10px; font-family: serif; font-weight: bolder; color: #fff;">
-                    - 게시글 작성 -
-                </div>
             </form>
         </div>
     </div>
 </div>
+
+ <style>
+    .register_input{
+        width: 75%;
+        height: 40px;
+        border-radius: 5px;
+        font-size: 20px;
+        padding-left: 1%;
+        margin-bottom: 12px;
+    }
+</style>

@@ -251,38 +251,42 @@
         										</a>
         									</div>
         									<% end %>
+        						
+        									<div class="col-md-12 col-sm-12" style="height:160px!;">
+        									    <p style="font-weight:bold; font-size:25px; margin: 100px 0px 20px 0px;">인물 HOT</p>
+        									</div>
+        									<% name = ['김건중','최장훈','최광백','안드레'] %>
+        									<% name.each do |nm| %>
+        									<% unless Onair.where(:name => "#{nm}").count == 0 %>
+            									<% people = Onair.where(:name => "#{nm}", :typee => "init" ).last %>
+            									<div class="col-md-3 col-sm-6 ll-service-pd" height="347px;">
+            										<a href="/people/info?char_name=<%= people.name_eng %>" target="_blank">
+            											<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
+            												<img src="<%= people.profile_img %>" class="ll-service-image" height="150px">
+            												<h3><%= people.name %></h3>
+            												<p><%= people.your_title %></p>
+            												<% if Onair.where(:name => "#{nm}", :typee => "object").last != nil %>
+            												<p>최근 소식 : <%= Onair.where(:name => "#{nm}", :typee => "object").last.make_date %> (총 <%= Onair.where(:name => "#{nm}", :typee => "object").count %>개)</p>
+            												<% end %>
+            												<span><%= people.main_title %>..</span>
+            												<a href="/people/info?char_name=<%= people.name_eng %>" target="_blank">바로가기</a>
+            											</div>
+            										</a>
+            									</div>
+            									<% end %>
+            								<% end %>
+            									<div class="col-md-3 col-sm-6 ll-service-pd" height="347px;">
+            										<a href="/people/info?char_name=ChoiJangHun" target="_blank">
+            											<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
+            												<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRmCl2k5yWbcP_Aq2XUPZUyxARXYXHyJqRrB_VXHVlOknJHtNnb" class="ll-service-image" height="150px">
+            												<h3>최장훈</h3>
+            												<p>2015년 대학원 총학생회장</p>
+            												<span>고공농성에서 투신소동까지. 그의 이야기</span>
+            												<a href="/people/info?char_name=ChoiJangHun" target="_blank">바로가기</a>
+            											</div>
+            										</a>
+            									</div>
         						<!--임시폐쇄구간-->
-        									<!--<div class="col-md-12 col-sm-12" style="height:160px!;">-->
-        									<!--    <p style="font-weight:bold; font-size:25px; margin: 100px 0px 20px 0px;">인물 HOT</p>-->
-        									<!--</div>-->
-        									<!--<% name = ['김건중','최장훈','최광백','안드레'] %>-->
-        									<!--<% name.each do |nm| %>-->
-        									<!--<% unless Onair.where(:who_name => "#{nm}").count == 0 %>-->
-            					<!--				<% people = Onair.where(:who_name => "#{nm}").last %>-->
-            					<!--				<div class="col-md-3 col-sm-6 ll-service-pd" height="347px;">-->
-            					<!--					<a href="/people/info" target="_blank">-->
-            					<!--						<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">-->
-            					<!--							<img src="<%#= people.img1 %>" class="ll-service-image">-->
-            					<!--							<h3><%#= people.who_name + "(#{people.who_did})" %></h3>-->
-            					<!--							<p>최근 소식 : <%#= people.date_day %></p>-->
-            					<!--							<span><%#= people.who_status.first(13) %>..</span>-->
-            					<!--							<a>자세히 보기</a>-->
-            					<!--						</div>-->
-            					<!--					</a>-->
-            					<!--				</div>-->
-            					<!--				<% end %>-->
-            					<!--			<% end %>-->
-        									<!--<div class="col-md-3 col-sm-6 ll-service-pd" height="347px;">-->
-        									<!--	<a href="/people/info?char_name=ChoiJangHun" target="_blank">-->
-        									<!--		<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">-->
-        									<!--			<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRmCl2k5yWbcP_Aq2XUPZUyxARXYXHyJqRrB_VXHVlOknJHtNnb" class="ll-service-image" height="150px">-->
-        									<!--			<h3>최장훈</h3>-->
-        									<!--			<p>2015년 대학원 총학생회장</p>-->
-        									<!--			<span>고공농성에서 투신소동까지. 그의 이야기</span>-->
-        									<!--			<a href="/people/info?char_name=ChoiJangHun" target="_blank">바로가기</a>-->
-        									<!--		</div>-->
-        									<!--	</a>-->
-        									<!--</div>-->
         									<!--<div class="col-md-3 col-sm-6 ll-service-pd" height="347px;">-->
         									<!--	<a href="http://togedule.com" target="_blank">-->
         									<!--		<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">-->
@@ -968,6 +972,11 @@
             <div class="ll-apply-description">
               <div class="c-text">
                 <span class="ll-font-bold">미래를여는 동국공동추진위원회(미동추)가 후원을 받고 있습니다.</span>
+              </div>
+            </div>
+            <div class="ll-apply-description">
+              <div class="c-text">
+                <span class="ll-font-bold">[후원계좌] 신한 110-385-056635(안드레) [후원문의] 010-6799-7317(최장훈) </span>
               </div>
             </div>
         
