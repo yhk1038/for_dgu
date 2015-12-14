@@ -5,25 +5,36 @@ Article.create!([
   {title: "수불 스님 동국대 이사 사퇴 선언", subtitle: "동국대 김건중 부총학생회장 ‘단식 중단 부탁’", link: "http://www.hyunbulnews.com/news/articleView.html?idxno=285467", org: "현대불교", img1: "http://www.hyunbulnews.com/news/photo/201511/285467_54681_3940.jpg", img2: "#개념스님 #감사합니다 ", date_day: "2015-11-26", password: 120350, like_it: 1},
   {title: "동국대 부총학생회장이 벌써 44일째 단식을 이어가는 이유", subtitle: "요구 사항: 총장과 이사장의 퇴진, 학교 측: '학생들과 협의할 문제 아니다' 급속히 망가진 건강", link: "http://www.huffingtonpost.kr/2015/11/27/story_n_8660422.html?1448604524", org: "허핑턴포스트코리아", img1: "https://fbcdn-photos-f-a.akamaihd.net/hphotos-ak-xlp1/v/t1.0-0/q89/s526x296/12074874_784494068328030_6056463046383454910_n.jpg?oh=5346bc7878adcffbfd8fa356c07141f9&oe=56D7ED2A&__gda__=1456978888_dd921ae148601ee2e318921eb5367d6c", img2: "#보도해주셔서 #고맙습니다 ", date_day: "2015-11-27", password: 120350, like_it: 1},
   {title: "“저 스님들이 무섭고 화가 난다”", subtitle: "동국대 학생들 문화제…미산스님 등 “이사회, 생명 살리는 결단 바란다”", link: "http://m.bulgyofocus.net/news/articleView.html?idxno=74869", org: "불교포커스", img1: "http://www.bulgyofocus.net/news/photo/201512/74869_49660_2325.JPG", img2: "#스님보다 #사람이돼라 #부들부들 ", date_day: "2015-12-01", password: 120350, like_it: 1},
-  {title: "동국대 총장 ‘사퇴 요구’ 거부…학생들 “염치가 없다”", subtitle: " “확정되지 않은 사실이 기정사실처럼 호도”... 학생들 “퇴진 거부 유감…적절치 못한 처신”", link: "http://news.naver.com/main/read.nhn?mode=LSD&mid=sec&oid=028&aid=0002299609&sid1=001&lfrom=kakao", org: "한겨레(네이버 뉴스)", img1: "http://imgnews.naver.net/image/028/2015/12/10/00546224802_20151210_99_20151210153503.JPG?type=w540", img2: "#염치가없다 #라는표현이아깝네요 ", date_day: "2015-12-10", password: 120350, like_it: nil},
-  {title: "동조단식·투신예고에 원칙 무너진 동국대", subtitle: "", link: "http://www.beopbo.com/news/articleView.html?idxno=90134", org: "법보신문", img1: "http://www.beopbo.com/com/image/com-5_1.gif", img2: "#사람이 #죽어도 #무너지면안되는 #그원칙은뭐냐 ", date_day: "2015-12-07", password: 120350, like_it: nil}
+  {title: "동국대 총장 ‘사퇴 요구’ 거부…학생들 “염치가 없다”", subtitle: " “확정되지 않은 사실이 기정사실처럼 호도”... 학생들 “퇴진 거부 유감…적절치 못한 처신”", link: "http://news.naver.com/main/read.nhn?mode=LSD&mid=sec&oid=028&aid=0002299609&sid1=001&lfrom=kakao", org: "한겨레(네이버 뉴스)", img1: "http://imgnews.naver.net/image/028/2015/12/10/00546224802_20151210_99_20151210153503.JPG?type=w540", img2: "#염치가없다 #라는표현이아깝네요 ", date_day: "2015-12-10", password: 120350, like_it: 1},
+  {title: "동조단식·투신예고에 원칙 무너진 동국대", subtitle: "12월3일 이사들 전원 사퇴 “농성자 철회 않을 땐 무효” 임원 사퇴로 학교 수습국면 협박성 여론몰이에 굴복 원칙없는 사퇴로 불씨여전", link: "http://www.beopbo.com/news/articleView.html?idxno=90134", org: "법보신문", img1: "http://www.beopbo.com/com/image/com-5_1.gif", img2: "#사람이 #죽어도 #무너지면안되는 #그원칙은뭐냐 ", date_day: "2015-12-07", password: 120350, like_it: 1},
+  {title: "이사진 총사퇴? 동국대는 달라진 게 없습니다", subtitle: "[주장] 50일 단식, 투신 예고로 받아낸 '전원 사퇴' 약속... 지킨 사람은 아무도 없다", link: "http://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0002167420&PAGE_CD=ET001&BLCK_NO=1&CMPT_CD=T0016", org: "오마이뉴스", img1: "http://ojsfile.ohmynews.com/STD_IMG_FILE/2015/1211/IE001902720_STD.jpg", img2: "#이사총사퇴 #동국대 #현재상황 #대국민피노키오 #쪽팔려 ", date_day: "2015-12-13", password: 120350, like_it: 1}
 ])
 AtcReply.create!([
   {atc_id: 8, name: "yhk1038@hanmail.net", password: "ks0352ks", content: "미친"}
 ])
 Countdaily.create!([
+  {today: "2015-12-12", aday: 9},
   {today: "2015-12-09", aday: 4},
   {today: "2015-12-10", aday: 12},
   {today: "2015-12-11", aday: 17},
-  {today: "2015-12-12", aday: 10}
+  {today: "2015-12-12", aday: 10},
+  {today: "2015-12-13", aday: 55}
+])
+Fimsg.create!([
+  {name: "만든이", content: "제 나름대로 응원하고 함께하고자 이 사이트를 만들었습니다. 50일의 단식을 견뎌내신 건중형님과 이에 못지않게 오랫동안 앞에서 싸워온 광백형님 그리고 미동추 여러분들께 이 작은 사이트를 드립니다. ", password: nil},
+  {name: "영문12 김용현", content: "아직 완성을 못해서 우선 많이 가려진채로 내보내게 되었습니다 후딱후딱 완성할께요 캬캬 시도때도 없이 도와달라고 물어보고 보채서 미안해 예진아 도와줘서 진짜 고마워!!", password: nil},
+  {name: "식공 08 김태현", content: "워후~", password: nil}
 ])
 Scdl.create!([
   {title: "관리자1호", date_day: "2015-12-02", date_time_start: "15:00", date_time_end: "22:00", img1: "https://scontent-icn1-1.xx.fbcdn.net/hphotos-xpf1/t31.0-8/12309489_914834081941772_5029851923782035944_o.jpg", img2: "#사람살리기 #많이많이 #제발 ", action_type: "공동행동", content_detail: "김건중 최장훈을 살리기 위한 학생 공동행동", how_many_read: nil, how_many_with: nil, password: 120350, user_id: nil},
-  {title: "관리자1호", date_day: "2015-12-02", date_time_start: "15:00", date_time_end: "22:00", img1: "https://scontent-icn1-1.xx.fbcdn.net/hphotos-xpf1/t31.0-8/12309489_914834081941772_5029851923782035944_o.jpg", img2: "#사람살리기 #많이많이 #제발 ", action_type: "공동행동", content_detail: "김건중 최장훈을 살리기 위한 학생 공동행동", how_many_read: 1, how_many_with: 0, password: 120350, user_id: nil},
-  {title: "관리자1호", date_day: "2015-12-03", date_time_start: "22:00", date_time_end: "22:30", img1: "https://scontent-icn1-1.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/12341569_915600945198419_6142221488587587992_n.jpg?oh=db0ced606e5b35c3dfe456dece7b6df1&oe=56EC0027", img2: "#이사회총사퇴 #학생승리 #보광뭐하냐 ", action_type: "기자회견", content_detail: "[이사회 총사퇴]에 대한 학생 긴급 기자회견(일산병원앞)", how_many_read: 1, how_many_with: 0, password: 120350, user_id: nil},
-  {title: "관리자1호", date_day: "2015-12-04", date_time_start: "12:30", date_time_end: "13:00", img1: "https://scontent-icn1-1.xx.fbcdn.net/hphotos-xpt1/t31.0-8/12309570_915722585186255_2527194785129115149_o.jpg", img2: "#이사회총사퇴 #현재상황 #끝날때까지끝난게아니다 ", action_type: "보고대회", content_detail: "학생들에게 전하는 지금 상황에 대한 브리핑이 있을 예정입니다!", how_many_read: 3, how_many_with: 0, password: 120350, user_id: nil},
+  {title: "관리자1호", date_day: "2015-12-02", date_time_start: "15:00", date_time_end: "22:00", img1: "https://scontent-icn1-1.xx.fbcdn.net/hphotos-xpf1/t31.0-8/12309489_914834081941772_5029851923782035944_o.jpg", img2: "#사람살리기 #많이많이 #제발 ", action_type: "공동행동", content_detail: "김건중 최장훈을 살리기 위한 학생 공동행동", how_many_read: 2, how_many_with: 0, password: 120350, user_id: nil},
+  {title: "관리자1호", date_day: "2015-12-03", date_time_start: "22:00", date_time_end: "22:30", img1: "https://scontent-icn1-1.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/12341569_915600945198419_6142221488587587992_n.jpg?oh=db0ced606e5b35c3dfe456dece7b6df1&oe=56EC0027", img2: "#이사회총사퇴 #학생승리 #보광뭐하냐 ", action_type: "기자회견", content_detail: "[이사회 총사퇴]에 대한 학생 긴급 기자회견(일산병원앞)", how_many_read: 3, how_many_with: 0, password: 120350, user_id: nil},
+  {title: "관리자1호", date_day: "2015-12-04", date_time_start: "12:30", date_time_end: "13:00", img1: "https://scontent-icn1-1.xx.fbcdn.net/hphotos-xpt1/t31.0-8/12309570_915722585186255_2527194785129115149_o.jpg", img2: "#이사회총사퇴 #현재상황 #끝날때까지끝난게아니다 ", action_type: "보고대회", content_detail: "학생들에게 전하는 지금 상황에 대한 브리핑이 있을 예정입니다!", how_many_read: 4, how_many_with: 0, password: 120350, user_id: nil},
   {title: "관리자1호", date_day: "2015-12-08", date_time_start: "18:30", date_time_end: "20:00", img1: "https://scontent-icn1-1.xx.fbcdn.net/hphotos-xtf1/v/t1.0-9/12316247_917409988350848_1977859876958813895_n.jpg?oh=53703e0781aead8405112cdbde1fc720&oe=56F06939", img2: "#동국대 #진짜민주주의 #보광아웃 #모여라 ", action_type: "합동토론회", content_detail: "동국대 어떻게 민주적으로 구성하나요? 보광은 어떻게 하나요?", how_many_read: 1, how_many_with: 0, password: 120350, user_id: nil}
 ])
 ScdlReply.create!([
-  {scdl_id: 5, name: "yhk1038@hanmail.net", password: "ks0352ks", content: "klkl"}
+  {scdl_id: 5, name: "관리자2호", password: "ks0352ks", content: "참여 메세지를 남겨주세요!"},
+  {scdl_id: 4, name: "관리자2호", password: "ks0352ks", content: "참여 메세지를 남겨주세요!"},
+  {scdl_id: 3, name: "관리자1호", password: "ks0352ks", content: "이건진짜..."},
+  {scdl_id: 2, name: "관리자2호", password: "ks0352ks", content: "일단 살았으니 됐음"}
 ])
