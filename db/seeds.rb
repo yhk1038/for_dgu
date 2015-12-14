@@ -13,12 +13,11 @@ AtcReply.create!([
   {atc_id: 8, name: "yhk1038@hanmail.net", password: "ks0352ks", content: "미친"}
 ])
 Countdaily.create!([
-  {today: "2015-12-12", aday: 9},
   {today: "2015-12-09", aday: 4},
   {today: "2015-12-10", aday: 12},
   {today: "2015-12-11", aday: 17},
-  {today: "2015-12-12", aday: 10},
-  {today: "2015-12-13", aday: 55}
+  {today: "2015-12-12", aday: 33},
+  {today: "2015-12-13", aday: 61}
 ])
 Fimsg.create!([
   {name: "만든이", content: "제 나름대로 응원하고 함께하고자 이 사이트를 만들었습니다. 50일의 단식을 견뎌내신 건중형님과 이에 못지않게 오랫동안 앞에서 싸워온 광백형님 그리고 미동추 여러분들께 이 작은 사이트를 드립니다. ", password: nil},
@@ -37,4 +36,7 @@ ScdlReply.create!([
   {scdl_id: 4, name: "관리자2호", password: "ks0352ks", content: "참여 메세지를 남겨주세요!"},
   {scdl_id: 3, name: "관리자1호", password: "ks0352ks", content: "이건진짜..."},
   {scdl_id: 2, name: "관리자2호", password: "ks0352ks", content: "일단 살았으니 됐음"}
+])
+Onair.create!([
+  {name: "최장훈", your_title: "2015년 대학원 총학생회장", main_title: "고공농성에서 투신소동까지. 그의 이야기", to_others: "50일 단식, 투신 예고로 받아낸 '전원 사퇴' 약속... 지킨 사람은 아무도 없으니까요.", password: nil, name_eng: "janghunchoi", phone: "01067997317", email: "sskr2010@hanmail.net", profile_img: "http://ojsfile.ohmynews.com/MEM_ETC/00717270.jpg?1738", about_you: "안녕하십니까. 부패한 언론으로 인해 시민들의 알 권리가 심각하게 침해당하고 있습니다. 많은 사람들이 알아야 할 주변의 소식을 꼭 알리고 싶습니다.\r\n안녕하십니까. 부패한 언론으로 인해 시민들의 알 권리가 심각하게 침해당하고 있습니다. 많은 사람들이 알아야 할 주변의 소식을 꼭 알리고 싶습니다.\r\n안녕하십니까. 부패한 언론으로 인해 시민들의 알 권리가 심각하게 침해당하고 있습니다. 많은 사람들이 알아야 할 주변의 소식을 꼭 알리고 싶습니다.", details: "안녕하십니까. 부패한 언론으로 인해 시민들의 알 권리가 심각하게 침해당하고 있습니다. 많은 사람들이 알아야 할 주변의 소식을 꼭 알리고 싶습니다.\r\n안녕하십니까. 부패한 언론으로 인해 시민들의 알 권리가 심각하게 침해당하고 있습니다. 많은 사람들이 알아야 할 주변의 소식을 꼭 알리고 싶습니다.\r\n안녕하십니까. 부패한 언론으로 인해 시민들의 알 권리가 심각하게 침해당하고 있습니다. 많은 사람들이 알아야 할 주변의 소식을 꼭 알리고 싶습니다.안녕하십니까. 부패한 언론으로 인해 시민들의 알 권리가 심각하게 침해당하고 있습니다. 많은 사람들이 알아야 할 주변의 소식을 꼭 알리고 싶습니다.\r\n안녕하십니까. 부패한 언론으로 인해 시민들의 알 권리가 심각하게 침해당하고 있습니다. 많은 사람들이 알아야 할 주변의 소식을 꼭 알리고 싶습니다.\r\n안녕하십니까. 부패한 언론으로 인해 시민들의 알 권리가 심각하게 침해당하고 있습니다. 많은 사람들이 알아야 할 주변의 소식을 꼭 알리고 싶습니다.안녕하십니까. 부패한 언론으로 인해 시민들의 알 권리가 심각하게 침해당하고 있습니다. 많은 사람들이 알아야 할 주변의 소식을 꼭 알리고 싶습니다.\r\n안녕하십니까. 부패한 언론으로 인해 시민들의 알 권리가 심각하게 침해당하고 있습니다. 많은 사람들이 알아야 할 주변의 소식을 꼭 알리고 싶습니다.\r\n안녕하십니까. 부패한 언론으로 인해 시민들의 알 권리가 심각하게 침해당하고 있습니다. 많은 사람들이 알아야 할 주변의 소식을 꼭 알리고 싶습니다.안녕하십니까. 부패한 언론으로 인해 시민들의 알 권리가 심각하게 침해당하고 있습니다. 많은 사람들이 알아야 할 주변의 소식을 꼭 알리고 싶습니다.\r\n안녕하십니까. 부패한 언론으로 인해 시민들의 알 권리가 심각하게 침해당하고 있습니다. 많은 사람들이 알아야 할 주변의 소식을 꼭 알리고 싶습니다.\r\n안녕하십니까. 부패한 언론으로 인해 시민들의 알 권리가 심각하게 침해당하고 있습니다. 많은 사람들이 알아야 할 주변의 소식을 꼭 알리고 싶습니다.", main_img: "http://ojsfile.ohmynews.com/STD_IMG_FILE/2015/0421/IE001822105_STD.JPG", make_date: "2015-12-13", date_time_start: nil, date_time_end: nil, date_time_start2: nil, date_time_end2: nil, typee: "init", how_many_read: nil, title: nil, title2: nil, title3: nil, title4: nil, title5: nil, subtitle1: nil, subtitle2: nil, subtitle3: nil, subtitle4: nil, subtitle5: nil, subtitle6: nil, subtitle7: nil, subtitle8: nil, subtitle9: nil, subtitle10: nil, subtitle11: nil, subtitle12: nil, subtitle13: nil, subtitle14: nil, subtitle15: nil, subtitle16: nil, subtitle17: nil, subtitle18: nil, subtitle19: nil, subtitle20: nil, content1: nil, content2: nil, content3: nil, content4: nil, content5: nil, content6: nil, content7: nil, content8: nil, content9: nil, content10: nil, content11: nil, content12: nil, content13: nil, content14: nil, content15: nil, content16: nil, content17: nil, content18: nil, content19: nil, content20: nil, img1: nil, img2: nil, img3: nil, img4: nil, img5: nil, img6: nil, img7: nil, img8: nil, img9: nil, img10: nil, ect_integer1: nil, ect_integer2: nil, ect_integer3: nil, user_id: nil}
 ])

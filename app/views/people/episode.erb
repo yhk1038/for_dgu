@@ -1,0 +1,282 @@
+<div class="col-md-12" style="padding:0%; width:100%; height:1300px;margin-top: -20px;">
+    <div class="col-md-12" style="background-color:#fff; padding:15px 0px 15px 15px;position: fixed;z-index: 100; border-bottom: 1px solid #eeeeee;">
+        <div id="logo" class="col-md-2">
+            <a href="/" class="standard-logo" data-dark-logo="images/logo1.png">
+                <img style="width:84%;" src="https://scontent-icn1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/12313669_858709030912827_2771614648691609873_n.jpg?oh=79e255f22524ec80356c35db1339e37f&oe=56E646BE" alt="for DGU">
+            </a>
+        </div>
+        <div class="col-md-10">
+            <nav id="primary-menu" class="">
+    			<ul class="nav one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="65" style="float:right; font-weight: bolder;width: 44.5%; font-size: 12px; text-align: center;">
+    				<li style="position:relative; float: left;width: 13.5%;"><a href="/" data-href="#wrapper" style="color:#000;"><div>HOME</div></a></li>
+    				<li style="position:relative; float: left;width: 13.5%;"><a href="#" data-href="#section-about" style="color:#1ABC9C;"><div>PEOPLE</div></a></li>
+    				<li style="position:relative; float: left;width: 13.5%;"><a href="/news/info" data-href="#section-univ" style="color:#000;"><div>NEWS</div></a></li>
+    				<li style="position:relative; float: left;width: 13.5%;"><a href="/scdl/info" data-href="#section-works" style="color:#000;"><div>일정알림</div></a></li>
+    				<li style="position:relative; float: left;width: 13.5%;"><a href="#" data-href="#section-review" style="color:#000;"><div>IDEAS</div></a></li>
+    				<li style="position:relative; float: left;width: 13.5%;"><a href="#" data-href="#section-services" style="color:#000;"><div>자유게시판</div></a></li>
+    				<li style="position:relative; float: left;width: 13.5%;"><a href="#" data-href="#section-operator" style="color:#000;"><div>응원메세지</div></a></li>
+    			</ul>
+    		</nav>
+        </div>
+    </div>
+    
+    <% if params[:char_name] == @episode.name_eng %>
+        <div class="col-md-12" style="padding:0%; height:500px; background-image:url(<%= @episode.img1 %>);background-size:cover;margin-top: 72px;">
+            <div class="col-md-12" style="padding:0%; height:100%; background-color:#000;opacity:0.5;"></div>
+            
+            <!--<div class="col-md-3" style="height:100%;position:absolute;float:left;"></div>-->
+            <center><div class="col-md-12" style="padding:8.5% 0% 0% 0%; height:100%; width:50%; margin:0% 25% 0% 25%; /*background-color:#fff;*/ position:absolute;">
+                <span style="font-size:16px; color:#fff;"><%= @board.main_title %></span>
+                <p style="font-size:35px; color:#fff; margin-top:20px;"><%= @episode.title %></p>
+                <center><p style="font-size:20px; color:#fff; bottom:1%; position:absolute;font-weight: inherit; left: 40%;"><%= @episode.make_date%> by <%= @board.name %></p></center>
+            </div></center>
+            <!--<div class="col-md-3" style="height:100%;"></div>-->
+            
+        </div>
+        
+        <div class="col-md-12" style="padding:0px;">
+            <div class="col-md-12" style="padding:0px 31.5%;">
+                <!--에피소드 본문-->
+                <div style="padding: 10px 0px; width:700px; height:auto; border-bottom:1px solid #eeeeee;">
+                    <!--subtitle1-->
+                    <% unless @episode.subtitle1.to_s.strip.length < 1 %>
+                        <p style="font-size: 20px; font-weight: bold; margin-top: 10%;"><%= @episode.subtitle1.strip %></p>
+                    <% end %>
+                    <!--content1-->
+                    <% unless @episode.content1.to_s.strip.length < 1 %>
+                        <pre style="font-size: 17px; line-height: 1.6;background-color: #fff; border: none;"><%= @episode.content1.strip %></pre>
+                    <% end %>
+                    <!--subtitle2-->
+                    <% unless @episode.subtitle2.to_s.strip.length < 1 %>
+                        <p style="text-align: center; font-size: 1.4em;margin: 7% 0%;">$ <%= @episode.subtitle2.strip %></p>
+                    <% end %>
+                    <!--content2-->
+                    <% unless @episode.content2.to_s.strip.length < 1 %>
+                        <pre style="font-size: 17px; line-height: 1.6;background-color: #fff; border: none;"><%= @episode.content2.strip %></pre>
+                    <% end %>
+                    
+                    <!--img2-->
+                    <% unless @episode.img2.to_s.strip.length < 1 %>
+                        <div style="width:100%; height:450px; text-align:center; margin: 5% 0%;">
+                            <img src="<%= @episode.img2 %>" style="height: 100%;">
+                        </div>
+                    <% end %>
+                    <!--subtitle3-->
+                    <% unless @episode.subtitle3.to_s.strip.length < 1 %>
+                        <p style="font-size: 20px; font-weight: bold; margin-top: 10%;"> <%= @episode.subtitle3.strip %></p>
+                    <% end %>
+                    <!--content3-->
+                    <% unless @episode.content3.to_s.strip.length < 1 %>
+                        <pre style="font-size: 17px; line-height: 1.6;background-color: #fff; border: none;"><%= @episode.content3.strip %></pre>
+                    <% end %>
+                    <!--subtitle4-->
+                    <% unless @episode.subtitle4.to_s.strip.length < 1 %>
+                        <p style="text-align: center; font-size: 1.4em;margin: 7% 0%;">$ <%= @episode.subtitle4.strip %></p>
+                    <% end %>
+                    <!--content4-->
+                    <% unless @episode.content4.to_s.strip.length < 1 %>
+                        <pre style="font-size: 17px; line-height: 1.6;background-color: #fff; border: none;"><%= @episode.content4.strip %></pre>
+                    <% end %>
+                    
+                    <!--img3-->
+                    <% unless @episode.img3.to_s.strip.length < 1 %>
+                        <div style="width:100%; height:450px; text-align:center; margin: 5% 0%;">
+                            <img src="<%= @episode.img3 %>" style="height: 100%;">
+                        </div>
+                    <% end %>
+                    <!--subtitle5-->
+                    <% unless @episode.subtitle5.to_s.strip.length < 1 %>
+                        <p style="font-size: 20px; font-weight: bold; margin-top: 10%;"> <%= @episode.subtitle5.strip %></p>
+                    <% end %>
+                    <!--content5-->
+                    <% unless @episode.content5.to_s.strip.length < 1 %>
+                        <pre style="font-size: 17px; line-height: 1.6;background-color: #fff; border: none;"><%= @episode.content5.strip %></pre>
+                    <% end %>
+                    <!--subtitle6-->
+                    <% unless @episode.subtitle6.to_s.strip.length < 1 %>
+                        <p style="text-align: center; font-size: 1.4em;margin: 7% 0%;">$ <%= @episode.subtitle6.strip %></p>
+                    <% end %>
+                    <!--content6-->
+                    <% unless @episode.content6.to_s.strip.length < 1 %>
+                        <pre style="font-size: 17px; line-height: 1.6;background-color: #fff; border: none;"><%= @episode.content6.strip %></pre>
+                    <% end %>
+                    
+                    <!--img4-->
+                    <% unless @episode.img4.to_s.strip.length < 1 %>
+                        <div style="width:100%; height:450px; text-align:center; margin: 5% 0%;">
+                            <img src="<%= @episode.img4 %>" style="height: 100%;">
+                        </div>
+                    <% end %>
+                    <!--subtitle7-->
+                    <% unless @episode.subtitle7.to_s.strip.length < 1 %>
+                        <p style="font-size: 20px; font-weight: bold; margin-top: 10%;"> <%= @episode.subtitle7.strip %></p>
+                    <% end %>
+                    <!--content7-->
+                    <% unless @episode.content7.to_s.strip.length < 1 %>
+                        <pre style="font-size: 17px; line-height: 1.6;background-color: #fff; border: none;"><%= @episode.content7.strip %></pre>
+                    <% end %>
+                    <!--subtitle8-->
+                    <% unless @episode.subtitle8.to_s.strip.length < 1 %>
+                        <p style="text-align: center; font-size: 1.4em;margin: 7% 0%;">$ <%= @episode.subtitle8.strip %></p>
+                    <% end %>
+                    <!--content8-->
+                    <% unless @episode.content8.to_s.strip.length < 1 %>
+                        <pre style="font-size: 17px; line-height: 1.6;background-color: #fff; border: none;"><%= @episode.content8.strip %></pre>
+                    <% end %>
+                    
+                    <!--img5-->
+                    <% unless @episode.img5.to_s.strip.length < 1 %>
+                        <div style="width:100%; height:450px; text-align:center; margin: 5% 0%;">
+                            <img src="<%= @episode.img5 %>" style="height: 100%;">
+                        </div>
+                    <% end %>
+                    <!--subtitle9-->
+                    <% unless @episode.subtitle9.to_s.strip.length < 1 %>
+                        <p style="font-size: 20px; font-weight: bold; margin-top: 10%;"> <%= @episode.subtitle9.strip %></p>
+                    <% end %>
+                    <!--content9-->
+                    <% unless @episode.content9.to_s.strip.length < 1 %>
+                        <pre style="font-size: 17px; line-height: 1.6;background-color: #fff; border: none;"><%= @episode.content9.strip %></pre>
+                    <% end %>
+                    <!--subtitle10-->
+                    <% unless @episode.subtitle10.to_s.strip.length < 1 %>
+                        <p style="text-align: center; font-size: 1.4em;margin: 7% 0%;">$ <%= @episode.subtitle10.strip %></p>
+                    <% end %>
+                    <!--content10-->
+                    <% unless @episode.content10.to_s.strip.length < 1 %>
+                        <pre style="font-size: 17px; line-height: 1.6;background-color: #fff; border: none;"><%= @episode.content10.strip %></pre>
+                    <% end %>
+                    
+                    <!--img6-->
+                    <% unless @episode.img6.to_s.strip.length < 1 %>
+                        <div style="width:100%; height:450px; text-align:center; margin: 5% 0%;">
+                            <img src="<%= @episode.img6 %>" style="height: 100%;">
+                        </div>
+                    <% end %>
+                    <!--subtitle11-->
+                    <% unless @episode.subtitle11.to_s.strip.length < 1 %>
+                        <p style="font-size: 20px; font-weight: bold; margin-top: 10%;"> <%= @episode.subtitle11.strip %></p>
+                    <% end %>
+                    <!--content11-->
+                    <% unless @episode.content11.to_s.strip.length < 1 %>
+                        <pre style="font-size: 17px; line-height: 1.6;background-color: #fff; border: none;"><%= @episode.content11.strip %></pre>
+                    <% end %>
+                    <!--subtitle12-->
+                    <% unless @episode.subtitle12.to_s.strip.length < 1 %>
+                        <p style="text-align: center; font-size: 1.4em;margin: 7% 0%;">$ <%= @episode.subtitle12.strip %></p>
+                    <% end %>
+                    <!--content12-->
+                    <% unless @episode.content12.to_s.strip.length < 1 %>
+                        <pre style="font-size: 17px; line-height: 1.6;background-color: #fff; border: none;"><%= @episode.content12.strip %></pre>
+                    <% end %>
+                    
+                    <!--img7-->
+                    <% unless @episode.img7.to_s.strip.length < 1 %>
+                        <div style="width:100%; height:450px; text-align:center; margin: 5% 0%;">
+                            <img src="<%= @episode.img7 %>" style="height: 100%;">
+                        </div>
+                    <% end %>
+                    <!--subtitle13-->
+                    <% unless @episode.subtitle13.to_s.strip.length < 1 %>
+                        <p style="font-size: 20px; font-weight: bold; margin-top: 10%;"> <%= @episode.subtitle13.strip %></p>
+                    <% end %>
+                    <!--content13-->
+                    <% unless @episode.content13.to_s.strip.length < 1 %>
+                        <pre style="font-size: 17px; line-height: 1.6;background-color: #fff; border: none;"><%= @episode.content13.strip %></pre>
+                    <% end %>
+                    <!--subtitle14-->
+                    <% unless @episode.subtitle14.to_s.strip.length < 1 %>
+                        <p style="text-align: center; font-size: 1.4em;margin: 7% 0%;">$ <%= @episode.subtitle14.strip %></p>
+                    <% end %>
+                    <!--content14-->
+                    <% unless @episode.content14.to_s.strip.length < 1 %>
+                        <pre style="font-size: 17px; line-height: 1.6;background-color: #fff; border: none;"><%= @episode.content14.strip %></pre>
+                    <% end %>
+                    
+                    <!--img8-->
+                    <% unless @episode.img8.to_s.strip.length < 1 %>
+                        <div style="width:100%; height:450px; text-align:center; margin: 5% 0%;">
+                            <img src="<%= @episode.img8 %>" style="height: 100%;">
+                        </div>
+                    <% end %>
+                    <!--subtitle15-->
+                    <% unless @episode.subtitle15.to_s.strip.length < 1 %>
+                        <p style="font-size: 20px; font-weight: bold; margin-top: 10%;"> <%= @episode.subtitle15.strip %></p>
+                    <% end %>
+                    <!--content15-->
+                    <% unless @episode.content15.to_s.strip.length < 1 %>
+                        <pre style="font-size: 17px; line-height: 1.6;background-color: #fff; border: none;"><%= @episode.content15.strip %></pre>
+                    <% end %>
+                    <!--subtitle16-->
+                    <% unless @episode.subtitle16.to_s.strip.length < 1 %>
+                        <p style="text-align: center; font-size: 1.4em;margin: 7% 0%;">$ <%= @episode.subtitle16.strip %></p>
+                    <% end %>
+                    <!--content16-->
+                    <% unless @episode.content16.to_s.strip.length < 1 %>
+                        <pre style="font-size: 17px; line-height: 1.6;background-color: #fff; border: none;"><%= @episode.content16.strip %></pre>
+                    <% end %>
+                    
+                    <!--img9-->
+                    <% unless @episode.img9.to_s.strip.length < 1 %>
+                        <div style="width:100%; height:450px; text-align:center; margin: 5% 0%;">
+                            <img src="<%= @episode.img9 %>" style="height: 100%;">
+                        </div>
+                    <% end %>
+                    <!--subtitle17-->
+                    <% unless @episode.subtitle17.to_s.strip.length < 1 %>
+                        <p style="font-size: 20px; font-weight: bold; margin-top: 10%;"> <%= @episode.subtitle17.strip %></p>
+                    <% end %>
+                    <!--content17-->
+                    <% unless @episode.content17.to_s.strip.length < 1 %>
+                        <pre style="font-size: 17px; line-height: 1.6;background-color: #fff; border: none;"><%= @episode.content17.strip %></pre>
+                    <% end %>
+                    <!--subtitle18-->
+                    <% unless @episode.subtitle18.to_s.strip.length < 1 %>
+                        <p style="text-align: center; font-size: 1.4em;margin: 7% 0%;">$ <%= @episode.subtitle18.strip %></p>
+                    <% end %>
+                    <!--content18-->
+                    <% unless @episode.content18.to_s.strip.length < 1 %>
+                        <pre style="font-size: 17px; line-height: 1.6;background-color: #fff; border: none;"><%= @episode.content18.strip %></pre>
+                    <% end %>
+                    
+                    <!--img10-->
+                    <% unless @episode.img10.to_s.strip.length < 1 %>
+                        <div style="width:100%; height:450px; text-align:center; margin: 5% 0%;">
+                            <img src="<%= @episode.img10 %>" style="height: 100%;">
+                        </div>
+                    <% end %>
+                    <!--subtitle19-->
+                    <% unless @episode.subtitle19.to_s.strip.length < 1 %>
+                        <p style="font-size: 20px; font-weight: bold; margin-top: 10%;"> <%= @episode.subtitle19.strip %></p>
+                    <% end %>
+                    <!--content19-->
+                    <% unless @episode.content19.to_s.strip.length < 1 %>
+                        <pre style="font-size: 17px; line-height: 1.6;background-color: #fff; border: none;"><%= @episode.content19.strip %></pre>
+                    <% end %>
+                    <!--subtitle20-->
+                    <% unless @episode.subtitle20.to_s.strip.length < 1 %>
+                        <p style="text-align: center; font-size: 1.4em;margin: 7% 0%;">$ <%= @episode.subtitle20.strip %></p>
+                    <% end %>
+                    <!--content20-->
+                    <% unless @episode.content20.to_s.strip.length < 1 %>
+                        <pre style="font-size: 17px; line-height: 1.6;background-color: #fff; border: none;"><%= @episode.content20.strip %></pre>
+                    <% end %>
+                    
+                    
+                    
+                    <span>© ChoiJangHun.</span>
+                    <div style="margin-left: 45%; width:10%; height:25px; border-bottom:1px solid #aeaeae;"></div>
+                </div>
+                <!--/-->
+            </div>
+        </div>
+    <% end %>
+    
+    <div class="col-md-12" style="padding:0px; height:75px; border-top: 10px solid #ebefee;">
+        <center>
+            <p>
+                <a href="/people/info?char_name=<%= params[:char_name] %>&member=<%= params[:char_name] %>">©</a> Kakao Corp.
+            </p>
+        </center>
+    </div>
+</div>
