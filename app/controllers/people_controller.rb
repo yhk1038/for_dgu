@@ -63,4 +63,11 @@ class PeopleController < ApplicationController
         @board = people.where(:typee => "init").last
         @episode = Onair.find(params[:id])
     end
+
+    def temp
+	aa = Onair.find(3)
+	aa.main_img = "http://www.bulkyo21.com/news/photo/201506/28757_23651_1913.jpg"
+	aa.save
+	redirect_to '/'
+    end
 end

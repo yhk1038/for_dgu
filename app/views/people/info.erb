@@ -88,9 +88,9 @@
                 </div>
                 <% i = i-1 %>
                 <% end %>
-                <% n = 4 %>
+                <% n = 2 %>
                 <% loop do %>
-                <% break if n <= 0 %>
+                <% break if n = 0 %>
                 <div style="padding: 10px 0px; width:700px; height:127px; border-bottom:1px solid #eeeeee;">
                     <a href="/people/episode?char_name=<%= @board.name_eng %>&id=<%=n%>" style="all:initial; width:80%; font-size:17px; cursor:pointer;">
                         <span style="color:#1ABC9C;"><%= n %>화</span> 고공농성에 대한 뒷 이야기들(<%= n %>)
