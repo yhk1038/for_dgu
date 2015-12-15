@@ -7,6 +7,9 @@ class PeopleController < ApplicationController
     end
     
     def uploader
+        if params[:statue] == "modify_episode"
+            @epi = Onair.find(params[:id])
+        end
     end
     
     def save
@@ -23,8 +26,8 @@ class PeopleController < ApplicationController
             aa.save
             redirect_to '/'
             
-        elsif params[:statue] == "regist" || params[:statue] == nil
-            if params[:id] != nil
+        elsif params[:statue] == "regist" || params[:statue] == "modify_episode"
+            if params[:statue] == "modify_episode"
                 aa = Onair.find(params[:id])
             else
                 aa = Onair.new

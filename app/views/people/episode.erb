@@ -38,6 +38,34 @@
             <div class="col-md-12" style="padding:0px 31.5%;">
                 <!--에피소드 본문-->
                 <div style="padding: 10px 0px; width:700px; height:auto; border-bottom:1px solid #eeeeee;">
+                    <% if params[:member] == "master" %>
+                        <a ></a>
+                        <a class="register_input" role="button" href="/people/uploader/<%= params[:id] %>?char_name=<%= @episode.name_eng %>&statue=modify_episode"
+                            value="작성이 완료되면 눌러주세요" placeholder="" style="background-color: #429AEC;
+                                                                                    border: inherit;
+                                                                                    width: 100%;
+                                                                                    margin: 0px;
+                                                                                    border-radius: 0px;
+                                                                                    float: left;
+                                                                                    position: fixed;
+                                                                                    left: 0px;
+                                                                                    bottom: 0px;
+                                                                                    color: #fff;
+                                                                                    font-size: 25px;
+                                                                                    font-weight: bolder;
+                                                                                    text-align: center;">
+                            이 글 수정하기</a>
+                                                                             <style>
+                                                                                .register_input{
+                                                                                    width: 75%;
+                                                                                    height: 40px;
+                                                                                    border-radius: 5px;
+                                                                                    font-size: 20px;
+                                                                                    padding-left: 1%;
+                                                                                    margin-bottom: 12px;
+                                                                                }
+                                                                             </style>
+                    <% end %>
                     <!--subtitle1-->
                     <% unless @episode.subtitle1.to_s.strip.length < 1 %>
                         <p style="font-size: 20px; font-weight: bold; margin-top: 10%;"><%= @episode.subtitle1.strip %></p>
@@ -264,7 +292,7 @@
                     
                     
                     
-                    <span>© ChoiJangHun.</span>
+                    <span><a href="/people/episode/<%= params[:id] %>?char_name=<%= @episode.name_eng %>&member=master">©</a> <%= @episode.name_eng %>.</span>
                     <div style="margin-left: 45%; width:10%; height:25px; border-bottom:1px solid #aeaeae;"></div>
                 </div>
                 <!--/-->
@@ -275,7 +303,7 @@
     <div class="col-md-12" style="padding:0px; height:75px; border-top: 10px solid #ebefee;">
         <center>
             <p>
-                <a href="/people/info?char_name=<%= params[:char_name] %>&member=<%= params[:char_name] %>">©</a> Kakao Corp.
+                <a href="/people/episode/<%= params[:id] %>?char_name=<%= params[:char_name] %>&member=master">©</a> Kakao Corp.
             </p>
         </center>
     </div>

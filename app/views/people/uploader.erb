@@ -166,15 +166,13 @@
                         <input type="text" name="subtitle1" value="" style="margin-bottom: 20px; margin-top: 5px; width: 700px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
                     <br>
                     <span style="font-size: 16px; font-weight: bold; padding: 14px 40px 14px 0px;">1번째 내용(필수)</span>
-                        <textarea name="content1" value="" cols="30" rows="3" style="margin-top: 5px; width: 700px; height: 95px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
-                        </textarea>
+                        <textarea name="content1" value="" cols="30" rows="3" style="margin-top: 5px; width: 700px; height: 95px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;"></textarea>
                     <br>
                     <span style="font-size: 16px; font-weight: bold; padding: 14px 25px 14px 0px;">2번째 부제</span>
                         <input type="text" name="subtitle2" value="" style="margin-bottom: 20px; margin-top: 5px; width: 700px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
                     <br>
                     <span style="font-size: 16px; font-weight: bold; padding: 14px 40px 14px 0px;">2번째 내용</span>
-                        <textarea name="content2" value="" cols="30" rows="3" style="margin-top: 5px; width: 700px; height: 95px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
-                        </textarea>
+                        <textarea name="content2" value="" cols="30" rows="3" style="margin-top: 5px; width: 700px; height: 95px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;"></textarea>
                     <br>
                     <% n=2 %>
                     <% loop do %>
@@ -186,18 +184,83 @@
                                 <input type="text" name="subtitle<%= n*2-1 %>" value="" style="margin-bottom: 20px; margin-top: 5px; width: 700px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
                             <br>
                             <span style="font-size: 16px; font-weight: bold; padding: 14px 40px 14px 0px;"><%= n*2 - 1 %>번째 내용</span>
-                                <textarea name="content<%= n*2-1 %>" value="" cols="30" rows="3" style="margin-top: 5px; width: 700px; height: 95px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
-                                </textarea>
+                                <textarea name="content<%= n*2-1 %>" value="" cols="30" rows="3" style="margin-top: 5px; width: 700px; height: 95px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;"></textarea>
                             <br>
                             <span style="font-size: 16px; font-weight: bold; padding: 14px 25px 14px 0px;"><%= n*2 %>번째 부제</span>
                                 <input type="text" name="subtitle<%= n*2 %>" value="" style="margin-bottom: 20px; margin-top: 5px; width: 700px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
                             <br>
                             <span style="font-size: 16px; font-weight: bold; padding: 14px 40px 14px 0px;"><%= n*2 %>번째 내용</span>
-                                <textarea name="content<%= n*2 %>" value="" cols="30" rows="3" style="margin-top: 5px; width: 700px; height: 95px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
-                                </textarea>
+                                <textarea name="content<%= n*2 %>" value="" cols="30" rows="3" style="margin-top: 5px; width: 700px; height: 95px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;"></textarea>
                             <br>
                         <% n = n+1 %>
                     <% end %>
+                    
+                <% elsif params[:statue] == "modify_episode" %>
+                    <div style="position: relative; width: 100%; height: 50px; margin-top: 30px; border-radius: 26px; background-color: #afb4b5;font-size: 23px; text-align: center; padding-top: 10px; font-family: serif; font-weight: bolder; color: #fff;">
+                        - 게시글 작성 -
+                    </div>
+                    <input type="hidden" name="id" value="<%= params[:id] %>">
+                    <input type="hidden" name="make_date" value="<%= Date.parse(Time.zone.now.to_s) %>">
+                    <input type="hidden" name="name_eng" value="<%= @epi.name_eng %>">
+                    <input type="hidden" name="statue" value="modify_episode">
+                    <input type="hidden" name="typee" value="object">
+                    <br>
+                    <br>
+                    <span style="font-size: 16px; padding: 14px 25px 14px 0px;">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        ## 이용방법 ##<br><br>
+                        홀수번째 부제는 굵은 글씨로 표현되며<br>[ex. "<span style="font-weight:800;">첫날부터 문제가 생겼다.</span>"]<br>
+                        짝수번째 부제는 $ 기호를 달아 가운데정렬됩니다.<br>[ex. "$ 문제는 이는 시작에 불과했다는 점이었다"]<br><br>
+                        중간에 제외하고 싶은 요소( N번째 사진/부제/내용 )는<br>입력을 하지 않고 건너뛰면 자동으로 제외되며<br>
+                        입력하지 않은 요소는 제외한채 입력된 요소의 순서대로 글이 보여집니다.<br>
+                        따라서 모두 채울 필요 없이 원하는 만큼 글을 작성한 뒤 제출하기 버튼을 누르면 됩니다.<br><br>
+                        #주의# 메인이미지/ 글 제목/ 1번째 부제 및 내용/ 1번째 내용사진은 반드시 넣어주세요.<br><br>
+                        #조언# 사진을 넣을때에는 해당 란에 "넣고 싶은 사진의 주소"를 붙여넣어주세요.<br>
+                        주소는 인터넷에 올라가 있는 사진을 마우스 우클릭하여 "주소 복사"한 뒤 붙여넣을 수 있습니다.
+                    </span>
+                    <br>
+                    <br>
+                    <br>
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 25px 14px 0px;">메인이미지(필수)</span>
+                        <input type="text" name="img1" value="<%= @epi.img1 %>" style="margin-bottom: 20px; margin-top: 5px; width: 700px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
+                    <br>
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 25px 14px 0px;">글 제목(필수)</span>
+                        <input type="text" name="title" value="<%= @epi.title %>" style="margin-bottom: 20px; margin-top: 5px; width: 700px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
+                    <br>
+                    <br>
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 25px 14px 0px;">1번째 부제(필수)</span>
+                        <input type="text" name="subtitle1" value="<%= @epi.subtitle1 %>" style="margin-bottom: 20px; margin-top: 5px; width: 700px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
+                    <br>
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 40px 14px 0px;">1번째 내용(필수)</span>
+                        <textarea name="content1" value="" cols="30" rows="3" style="margin-top: 5px; width: 700px; height: 95px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;"><%= @epi.content1.strip %></textarea>
+                    <br>
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 25px 14px 0px;">2번째 부제</span>
+                        <input type="text" name="subtitle2" value="<%= @epi.subtitle2 unless @epi.subtitle2.nil? %>" style="margin-bottom: 20px; margin-top: 5px; width: 700px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
+                    <br>
+                    <span style="font-size: 16px; font-weight: bold; padding: 14px 40px 14px 0px;">2번째 내용</span>
+                        <textarea name="content2" value="" cols="30" rows="3" style="margin-top: 5px; width: 700px; height: 95px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;"><%= @epi.content2.strip unless @epi.content2.nil? %></textarea>
+                    <br>
+                    <% n=2 %>
+                    <% loop do %>
+                        <% break if n > 10 %>
+                            <span style="font-size: 16px; font-weight: bold; padding: 14px 25px 14px 0px;"><%= n-1 %>번째 내용 사진<%= "(필수)" if n == 2 %></span>
+                                <input type="text" name="img<%= n %>" value="<%= eval("@epi.img" + "#{n.to_s}" + " unless @epi.img" + "#{n.to_s}"  + ".nil?") %>" style="margin-bottom: 20px; margin-top: 5px; width: 700px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
+                            <br>
+                            <span style="font-size: 16px; font-weight: bold; padding: 14px 25px 14px 0px;"><%= n*2 - 1 %>번째 부제</span>
+                                <input type="text" name="subtitle<%= n*2-1 %>" value="<%= eval("@epi.subtitle" + "#{(n*2-1).to_s}" + " unless @epi.subtitle" + "#{(n*2-1).to_s}" + ".nil?") %>" style="margin-bottom: 20px; margin-top: 5px; width: 700px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
+                            <br>
+                            <span style="font-size: 16px; font-weight: bold; padding: 14px 40px 14px 0px;"><%= n*2 - 1 %>번째 내용</span>
+                                <textarea name="content<%= n*2-1 %>" value="" cols="30" rows="3" style="margin-top: 5px; width: 700px; height: 95px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;"><%= eval("@epi.content" + "#{(n*2-1).to_s}" + ".strip unless @epi.content" + "#{(n*2-1).to_s}"  + ".nil?") %></textarea>
+                            <br>
+                            <span style="font-size: 16px; font-weight: bold; padding: 14px 25px 14px 0px;"><%= n*2 %>번째 부제</span>
+                                <input type="text" name="subtitle<%= n*2 %>" value="<%= eval("@epi.subtitle" + "#{(n*2).to_s}" + " unless @epi.subtitle" + "#{(n*2).to_s}"  + ".nil?") %>" style="margin-bottom: 20px; margin-top: 5px; width: 700px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
+                            <br>
+                            <span style="font-size: 16px; font-weight: bold; padding: 14px 40px 14px 0px;"><%= n*2 %>번째 내용</span>
+                                <textarea name="content<%= n*2 %>" value="" cols="30" rows="3" style="margin-top: 5px; width: 700px; height: 95px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;"><%= eval("@epi.content" + "#{(n*2).to_s}" + ".strip unless @epi.content" + "#{(n*2).to_s}"  + ".nil?") %></textarea>
+                            <br>
+                        <% n = n+1 %>
+                    <% end %>
+                    
                 <% end %>
                 <input class="register_input" type="submit" name="" value="작성이 완료되면 눌러주세요" placeholder="" style="background-color: #429AEC;
                                                                                                                     border: inherit;
@@ -226,4 +289,4 @@
         padding-left: 1%;
         margin-bottom: 12px;
     }
-</style>
+ </style>

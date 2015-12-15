@@ -80,7 +80,7 @@
                 <% @post.all.reverse.each do |pst| %>
                 <div style="padding: 10px 0px; width:700px; height:127px; border-bottom:1px solid #eeeeee;">
                     <a href="/people/episode/<%= pst.id %>?char_name=<%= pst.name_eng %>" style="all:initial; width:80%; font-size:17px; cursor:pointer;">
-                        <spna style="color:#1ABC9C;"><%= i %>화</spna> <%= pst.title %>
+                        <span style="color:#1ABC9C;"><%= i %>화</span> <%= pst.title %>
                     </a>
                     <div style="float:right; width:20%; height:100%; background-color:blue;">
                         <img src="<%= pst.img1 %>" style="width:100%;height:100%;">
@@ -93,7 +93,7 @@
                 <% break if n <= 0 %>
                 <div style="padding: 10px 0px; width:700px; height:127px; border-bottom:1px solid #eeeeee;">
                     <a href="/people/episode?char_name=<%= @board.name_eng %>&id=<%=n%>" style="all:initial; width:80%; font-size:17px; cursor:pointer;">
-                        <spna style="color:#1ABC9C;"><%= n %>화</spna> 고공농성에 대한 뒷 이야기들(<%= n %>)
+                        <span style="color:#1ABC9C;"><%= n %>화</span> 고공농성에 대한 뒷 이야기들(<%= n %>)
                     </a>
                     <div style="float:right; width:20%; height:100%; background-color:blue;">
                         <img src="http://www.dgugspress.com/news/photo/201506/1407_681_3316.jpg" style="width:100%;height:100%;">
