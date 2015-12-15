@@ -255,8 +255,7 @@
         									<div class="col-md-12 col-sm-12" style="height:160px!;">
         									    <p style="font-weight:bold; font-size:25px; margin: 100px 0px 20px 0px;">인물 HOT</p>
         									</div>
-        									<% name = ['김건중','최장훈','최광백','안드레','한태식'] %>
-        									<% name.each do |nm| %>
+        									<% @name_arr.each do |nm| %>
         									<% unless Onair.where(:name => "#{nm}").count == 0 %>
             									<% people = Onair.where(:name => "#{nm}", :typee => "init" ).last %>
             									<div class="col-md-3 col-sm-6 ll-service-pd" height="347px;">

@@ -5,6 +5,14 @@ class HomeController < ApplicationController
   
   def index2
     
+    name_arr = Array.new
+
+    inits = Onair.where(:typee => "init").all
+    inits.each do |ff|
+    	name_arr << ff.name
+    end
+    @name_arr = name_arr
+
     @today = Date.parse(Time.zone.now.to_s)
     unless Countdaily.where(:today => "#{@today}").take == nil
       cc = Countdaily.where(:today => "#{@today}").take
