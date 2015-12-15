@@ -10,7 +10,7 @@ class PeopleController < ApplicationController
         if params[:statue] == "modify_episode"
             @epi = Onair.find(params[:id])
         elsif params[:statue] == "modify"
-            @epi = Onair.where(:name_eng => "#{params[:char_name]}", :typee => "init").last
+            @epi = Onair.where(:name_eng => "#{params[:char_name]}", :typee => "init").first
         end
     end
     

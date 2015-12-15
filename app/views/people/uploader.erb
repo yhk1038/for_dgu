@@ -95,6 +95,7 @@
                     <input type="hidden" name="make_date" value="<%= Date.parse(Time.zone.now.to_s) %>">
                     <input type="hidden" name="statue" value="modify">
                     <input type="hidden" name="typee" value="init">
+                    <input type="hidden" name="id" value="<%= @epi.id %>">
                     <span style="font-size: 16px; font-weight: bold; padding: 14px 46px 14px 31px;">이름</span>
                         <input type="text" name="name" value="<%= @epi.name %>" placeholder="이름" style="margin-top: 20px; height: 46px; width: 204px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
                     <span style="font-size: 16px; font-weight: bold; padding: 14px 31px 14px 16px;">영문명</span>

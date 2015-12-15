@@ -59,7 +59,7 @@
             
             <% if params[:category] == "introduction" %>
                 <% if params[:member] == @board.name_eng %>
-                    <a class="register_input" role="button" href="/people/uploader/<%= params[:id] %>?char_name=<%= @board.name_eng %>&statue=modify" 
+                    <a class="register_input" role="button" href="/people/uploader?char_name=<%= @board.name_eng %>&statue=modify" 
                                                                         style="background-color: #429AEC;
                                                                                 border: inherit;
                                                                                 width: 100%;
