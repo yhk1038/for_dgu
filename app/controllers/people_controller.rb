@@ -9,6 +9,8 @@ class PeopleController < ApplicationController
     def uploader
         if params[:statue] == "modify_episode"
             @epi = Onair.find(params[:id])
+        elsif params[:statue] == "modify"
+            @epi = Onair.where(:name_eng => "#{params[:char_name]}", :typee => "init").last
         end
     end
     

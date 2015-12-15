@@ -58,6 +58,33 @@
             <div class="col-md-12" style="padding:0px 31.5%;">
             
             <% if params[:category] == "introduction" %>
+                <% if params[:member] == @board.name_eng %>
+                    <a class="register_input" role="button" href="/people/uploader/<%= params[:id] %>?char_name=<%= @board.name_eng %>&statue=modify" 
+                                                                        style="background-color: #429AEC;
+                                                                                border: inherit;
+                                                                                width: 100%;
+                                                                                margin: 0px;
+                                                                                border-radius: 0px;
+                                                                                float: left;
+                                                                                position: fixed;
+                                                                                left: 0px;
+                                                                                bottom: 0px;
+                                                                                color: #fff;
+                                                                                font-size: 25px;
+                                                                                font-weight: bolder;
+                                                                                text-align: center;">
+                        게시판 설정 및 소개글 수정하기</a>
+                                                                         <style>
+                                                                            .register_input{
+                                                                                width: 75%;
+                                                                                height: 40px;
+                                                                                border-radius: 5px;
+                                                                                font-size: 20px;
+                                                                                padding-left: 1%;
+                                                                                margin-bottom: 12px;
+                                                                            }
+                                                                         </style>
+                <% end %>
             <% end %>
             
             <% if params[:category] == "episodes" || params[:category] == nil %>
@@ -113,7 +140,7 @@
     <div class="col-md-12" style="padding:0px; height:75px; border-top: 10px solid #ebefee;">
         <center>
             <p>
-                <a href="/people/info?char_name=<%= @board.name_eng %>&member=<%= @board.name_eng %>">©</a> Kakao Corp.
+                <a href="/people/info?char_name=<%= @board.name_eng %>&member=<%= @board.name_eng %>&category=<%= "introduction" if params[:category] == "introduction" %>">©</a> Kakao Corp.
             </p>
         </center>
     </div>

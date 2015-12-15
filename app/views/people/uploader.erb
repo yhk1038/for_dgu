@@ -90,44 +90,42 @@
                 
                 <% elsif params[:statue] == "modify" %>
                     <div style="position: relative; width: 100%; height: 50px; margin-top: 30px; border-radius: 26px; background-color: #afb4b5;font-size: 23px; text-align: center; padding-top: 10px; font-family: serif; font-weight: bolder; color: #fff;">
-                        - 당신의 정보 -
+                        - 당신의 정보 수정하기 -
                     </div>
                     <input type="hidden" name="make_date" value="<%= Date.parse(Time.zone.now.to_s) %>">
                     <input type="hidden" name="statue" value="modify">
                     <input type="hidden" name="typee" value="init">
                     <span style="font-size: 16px; font-weight: bold; padding: 14px 46px 14px 31px;">이름</span>
-                        <input type="text" name="name" value="" placeholder="이름" style="margin-top: 20px; height: 46px; width: 204px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
+                        <input type="text" name="name" value="<%= @epi.name %>" placeholder="이름" style="margin-top: 20px; height: 46px; width: 204px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
                     <span style="font-size: 16px; font-weight: bold; padding: 14px 31px 14px 16px;">영문명</span>
-                        <input type="text" name="name_eng" value="" placeholder="영어이름(띄어쓰기X)" style="margin-top: 20px; height: 46px; width: 279px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
+                        <input type="text" name="name_eng" value="<%= @epi.name_eng %>" placeholder="영어이름(띄어쓰기X)" style="margin-top: 20px; height: 46px; width: 279px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
                     <br>
                     <span style="font-size: 16px; font-weight: bold; padding: 14px 46px 14px 31px;">전화</span>
-                        <input type="text" name="phone" value="" placeholder="연락처" style="margin-top: 20px; height: 46px; width: 204px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
+                        <input type="text" name="phone" value="<%= @epi.phone %>" placeholder="연락처" style="margin-top: 20px; height: 46px; width: 204px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
                     <span style="font-size: 16px; font-weight: bold; padding: 14px 31px 14px 16px;">이메일</span>
-                        <input type="text" name="email" value="" placeholder="이메일" style="margin-top: 20px; height: 46px; width: 279px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
+                        <input type="text" name="email" value="<%= @epi.email %>" placeholder="이메일" style="margin-top: 20px; height: 46px; width: 279px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
                     <br>
                     <span style="font-size: 16px; font-weight: bold; padding: 14px 46px 14px 31px;">역할</span>
-                        <input type="text" name="your_title" value="" placeholder="당시의 역할(ex. 2015년 대학원 총학생회장)" style="margin-top: 20px; width: 584px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
+                        <input type="text" name="your_title" value="<%= @epi.your_title %>" placeholder="당시의 역할(ex. 2015년 대학원 총학생회장)" style="margin-top: 20px; width: 584px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
                     <br>
                     <span style="font-size: 16px; font-weight: bold; padding: 14px 46px 14px 31px;">프사</span>
-                        <input type="text" name="profile_img" value="" placeholder="주소를 붙여넣으세요(사진을 오른쪽클릭하면 주소를 복사할수있어요!)" style="margin-bottom: 30px; margin-top: 20px; width: 584px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
+                        <input type="text" name="profile_img" value="<%= @epi.profile_img %>" placeholder="주소를 붙여넣으세요(사진을 오른쪽클릭하면 주소를 복사할수있어요!)" style="margin-bottom: 30px; margin-top: 20px; width: 584px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
                     <br>
                     
                     <span style="font-size: 16px; font-weight: bold; padding: 14px 22px 14px 0px;">About You</span>-당신(진행자)에 대한 소개 입력 :길이 150자
-                        <textarea name="about_you" cols="30" rows="3" style="word-wrap: break-word; margin-bottom: 20px; margin-top: 5px; width: 700px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
-                        </textarea>
+                        <textarea name="about_you" cols="30" rows="3" style="word-wrap: break-word; margin-bottom: 20px; margin-top: 5px; width: 700px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;"><%= @epi.about_you %></textarea>
                     <br>
                     <span style="font-size: 16px; font-weight: bold; padding: 14px 25px 14px 0px;">To Others</span>-서른글자로 전하고 싶은 말 :길이 한두문장
-                        <input type="text" name="to_others" value="" style="margin-bottom: 20px; margin-top: 5px; width: 700px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
+                        <input type="text" name="to_others" value="<%= @epi.to_others %>" style="margin-bottom: 20px; margin-top: 5px; width: 700px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
                     <br>
                     <span style="font-size: 16px; font-weight: bold; padding: 14px 40px 14px 0px;">Details</span> -위에서 미처 담지 못한 당신에 대한 설명을 자유롭게 써주세요.
-                        <textarea name="details" value="" cols="30" rows="3" style="margin-top: 5px; width: 700px; height: 95px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;">
-                        </textarea>
+                        <textarea name="details" value="" cols="30" rows="3" style="margin-top: 5px; width: 700px; height: 95px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 20px;"><%= @epi.details %></textarea>
                     <br>
                     <span style="font-size: 16px; font-weight: bold; padding: 14px 8px 14px 8px;">게시판의 제목</span>
-                        <input type="text" name="main_title" value="" placeholder="전체의 제목(ex. 고공농성에서 투신소동까지. 그의 이야기)" style="margin-top: 20px; width: 578px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
+                        <input type="text" name="main_title" value="<%= @epi.main_title %>" placeholder="전체의 제목(ex. 고공농성에서 투신소동까지. 그의 이야기)" style="margin-top: 20px; width: 578px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
                     <br>
                     <span style="font-size: 16px; font-weight: bold; padding: 14px 46px 14px 31px;">사진</span>
-                        <input type="text" name="main_img" value="" placeholder="주소를 붙여넣으세요(대문짝만한 사진이에요)" style="margin-bottom: 30px; margin-top: 20px; width: 584px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
+                        <input type="text" name="main_img" value="<%= @epi.main_img %>" placeholder="주소를 붙여넣으세요(대문짝만한 사진이에요)" style="margin-bottom: 30px; margin-top: 20px; width: 584px; height: 46px; border: 1px solid red; border-radius: 5px; padding: 4px 12px 3px 12px; font-size: 16px;">
                     <br>
                 
                 <% elsif params[:statue] == "regist" || params[:statue] == nil %>
@@ -197,7 +195,7 @@
                     
                 <% elsif params[:statue] == "modify_episode" %>
                     <div style="position: relative; width: 100%; height: 50px; margin-top: 30px; border-radius: 26px; background-color: #afb4b5;font-size: 23px; text-align: center; padding-top: 10px; font-family: serif; font-weight: bolder; color: #fff;">
-                        - 게시글 작성 -
+                        - 게시글을 수정합니다 -
                     </div>
                     <input type="hidden" name="id" value="<%= params[:id] %>">
                     <input type="hidden" name="make_date" value="<%= Date.parse(Time.zone.now.to_s) %>">
