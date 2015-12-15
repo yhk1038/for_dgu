@@ -72,4 +72,10 @@ class PeopleController < ApplicationController
 	aa.save
 	redirect_to '/'
     end
+    
+    def json
+        if params[:search] == "init"
+            
+        end
+    end
 end
